@@ -7,7 +7,9 @@
 
 Ext.namespace('Portal.search');
 
-Portal.search.FacetedSearchResultsDataView = Ext.extend(Ext.DataView, {
+Ext.define('Portal.search.FacetedSearchResultsDataView', {
+    extend: 'Ext.DataView',
+
 
     MINIMAP_HEIGHT: 90,
     MINIMAP_WIDTH: 160, // 16:9 ratio http://size43.com/jqueryVideoTool.html
@@ -321,5 +323,3 @@ Portal.search.FacetedSearchResultsDataView = Ext.extend(Ext.DataView, {
         }
     }
 });
-
-Ext.reg('portal.search.facetedsearchresultsdataview', Portal.search.FacetedSearchResultsDataView);

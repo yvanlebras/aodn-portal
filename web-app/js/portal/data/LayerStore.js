@@ -14,7 +14,8 @@ Ext.namespace('Portal.data');
  * It's intended for this to be generalised when the concept of "bundles"
  * is introduced (i.e. it will store the set of active bundles).
  */
-Portal.data.LayerStore = Ext.extend(GeoExt.data.LayerStore, {
+Ext.define('Portal.data.LayerStore', {
+    extend: 'GeoExt.data.LayerStore',
 
     BLOCKED: "BLOCKED",
 

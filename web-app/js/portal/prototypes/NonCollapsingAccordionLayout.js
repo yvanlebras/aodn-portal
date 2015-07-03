@@ -5,9 +5,12 @@
  *
  */
 
+Ext.namespace('Ext.ux');
 // Custom accordion layout that does not allow the accordion to be fully closed.
 // I.e., at least one panel must be open, and that panel cannot be explicitly closed.
-Ext.ux.NonCollapsingAccordionLayout = Ext.extend( Ext.layout.Accordion, {
+Ext.define('Ext.ux.NonCollapsingAccordionLayout', {
+    extend: 'Ext.layout.container.Accordion',
+    alias  : 'noncollapsingaccordion',
     animate : false,
 
     // A reference to the currently expanded panel that I can change without altering the this.activeItem object
@@ -38,4 +41,3 @@ Ext.ux.NonCollapsingAccordionLayout = Ext.extend( Ext.layout.Accordion, {
         if( panel == this.currentlyExpandedPanel ) return false;
     }
 });
-Ext.Container.LAYOUTS[ 'noncollapsingaccordion' ] = Ext.ux.NonCollapsingAccordionLayout;

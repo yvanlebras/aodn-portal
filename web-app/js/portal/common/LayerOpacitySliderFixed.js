@@ -1,25 +1,26 @@
-
 /*
+
+/!*
  * Copyright 2012 IMOS
  *
  * The AODN/IMOS Portal is distributed under the terms of the GNU General Public License
  *
- */
+ *!/
 
 Ext.namespace('Portal.common');
 
-/* Code common to main map and minimap */
+/!* Code common to main map and minimap *!/
 
 Portal.common.LayerOpacitySliderFixed = Ext.extend(GeoExt.LayerOpacitySlider, {
     //WARNING, inverse doesn't won't work with this class.
-        /** private: method[getOpacityValue]
+        /!** private: method[getOpacityValue]
      *  :param layer: ``OpenLayers.Layer`` or :class:`GeoExt.data.LayerRecord`
      *  :return:  ``Integer`` The opacity for the layer.
      *
      *  Returns the opacity value for the layer.
      *
      * No longer messes up when min and max are different.
-     */
+     *!/
     getOpacityValue: function(layer) {
         var value;
         if (layer && layer.opacity !== null) {
@@ -38,12 +39,12 @@ Portal.common.LayerOpacitySliderFixed = Ext.extend(GeoExt.LayerOpacitySlider, {
         return value;
     },
 
-        /** private: method[changeLayerOpacity]
+        /!** private: method[changeLayerOpacity]
      *  :param slider: :class:`GeoExt.LayerOpacitySlider`
      *  :param value: ``Number`` The slider value
      *
      *  Updates the ``OpenLayers.Layer`` opacity value.
-     */
+     *!/
     changeLayerOpacity: function(slider, value) {
         if (this.layer) {
             value = value / 100;
@@ -53,3 +54,4 @@ Portal.common.LayerOpacitySliderFixed = Ext.extend(GeoExt.LayerOpacitySlider, {
         }
     }
 });
+*/

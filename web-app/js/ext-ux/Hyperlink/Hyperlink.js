@@ -12,7 +12,8 @@
 Ext.namespace('Ext.ux');
 
 
-Ext.ux.Hyperlink = Ext.extend(Ext.form.Label, {
+Ext.define('Ext.ux.Hyperlink', {
+    extend: 'Ext.form.Label',
     
     iconCls: '',
     cls: 'x-hyperlink',
@@ -59,5 +60,3 @@ Ext.ux.Hyperlink = Ext.extend(Ext.form.Label, {
         Ext.fly(this.el.id).dom.innerHTML = html;
     }
 });
-
-Ext.reg('hyperlink', Ext.ux.Hyperlink);

@@ -7,7 +7,8 @@
 
 Ext.namespace('Portal.search.field');
 
-Portal.search.field.FacetedDateRange = Ext.extend(Ext.Container, {
+Ext.define('Portal.search.field.FacetedDateRange', {
+    extend: 'Ext.Container',
     layout:'auto',
 
     initComponent:function () {
@@ -123,6 +124,4 @@ Portal.search.field.FacetedDateRange = Ext.extend(Ext.Container, {
 
     }
 });
-
-Ext.reg('portal.search.field.faceteddaterange', Portal.search.field.FacetedDateRange);
 

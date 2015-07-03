@@ -604,16 +604,6 @@ p.important {
     font-weight: bold;
 }
 
-.extAjaxLoading {
-    border-radius: 4px;
-    padding: 3px;
-    background-color: #ffffff ! important;
-}
-
-.extAjaxLoading div {
-    background-color: #ffffff ! important;
-}
-
 .x-panel-header {
     background-image: none;
     background-color: inherit;

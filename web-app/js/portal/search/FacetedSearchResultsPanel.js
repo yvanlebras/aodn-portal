@@ -7,7 +7,8 @@
 
 Ext.namespace('Portal.search');
 
-Portal.search.FacetedSearchResultsPanel = Ext.extend(Ext.Panel, {
+Ext.define('Portal.search.FacetedSearchResultsPanel', {
+    extend: 'Ext.Panel',
 
     initComponent:function () {
 
@@ -79,5 +80,3 @@ Portal.search.FacetedSearchResultsPanel = Ext.extend(Ext.Panel, {
         this.body.dom.scrollTop = 0;
     }
 });
-
-Ext.reg('portal.search.facetedsearchresultspanel', Portal.search.FacetedSearchResultsPanel);

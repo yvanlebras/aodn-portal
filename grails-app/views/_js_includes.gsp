@@ -21,16 +21,27 @@
 <script src="${resource(dir: 'js/portal/common', file: 'helpers.js')}" type="text/javascript"></script>
 
 <g:if env="development">
-    <script src="${resource(dir: 'js/extjs-4.1.1', file: 'ext-all-debug.js')}" type="text/javascript"></script>
+    <script src="${resource(dir: 'js/extjs-4.1.1', file: 'ext-all-debug-w-comments.js')}" type="text/javascript"></script>
 </g:if>
 <g:else>
     <script src="${resource(dir: 'js/extjs-4.1.1', file: 'ext-all.js')}" type="text/javascript"></script>
 </g:else>
 
 <!-- Ext 3 Compatibility (remove after migration is complete) -->
-<script src="${resource(dir: 'js/ext-3.3.1', file: 'ext3-core-compat.js')}" type="text/javascript"></script>
-<script src="${resource(dir: 'js/ext-3.3.1', file: 'ext3-compat.js')}" type="text/javascript"></script>
+<script src="${resource(dir: 'js/extjs-4.1.1', file: 'ext3-core-compat.js')}" type="text/javascript"></script>
+<script src="${resource(dir: 'js/extjs-4.1.1', file: 'ext3-compat.js')}" type="text/javascript"></script>
 <script type="text/javascript">
+
+    // TODO Might be place elsewhere
+    Ext.Loader.setConfig({
+        enabled:true,
+        disableCaching: true,
+        paths: {
+            GeoExt: "js/geoext2-2.0.3/src/GeoExt",
+            Portal: "js/portal"
+        }
+    });
+
     <!-- Ext 3 Compatibility (remove after migration is complete) -->
     Ext.Compat.showErrors = true;
 </script>
@@ -38,11 +49,8 @@
 
 <script src="${resource(dir: 'js/OpenLayers-2.13.1', file: 'OpenLayers.js')}" type="text/javascript"></script>
 <script src="${resource(dir: 'js/OpenLayers-2.13.1/lib', file: 'deprecated.js')}" type="text/javascript"></script>
-<!--- GeoExt (Has to be after Openlayers and ExJS) -->
-<script src="${resource(dir: 'js/geoext2-2.0.3/src/GeoExt', file: 'Version.js')}" type="text/javascript"></script>
 
 <script src="${resource(dir: 'js/ext-ux/form', file: 'DateTime.js')}" type="text/javascript"></script>
-<script src="${resource(dir: 'js/ext-ux/SuperBoxSelect', file: 'SuperBoxSelect.js')}" type="text/javascript"></script>
 <script src="${resource(dir: 'js/ext-ux', file: 'ScrollTo.js')}" type="text/javascript"></script>
 <script src="${resource(dir: 'js/ext-ux/Hyperlink', file: 'Hyperlink.js')}" type="text/javascript"></script>
 <script src="${resource(dir: 'js/ext-ux/tree', file: 'XmlTreeLoader.js')}" type="text/javascript"></script>
@@ -67,10 +75,7 @@
     <script type="text/javascript" src="${resource(dir: 'js/portal/lang', file: 'en.js')}"></script>
     <script type="text/javascript" src="${resource(dir: 'js/portal/common', file: 'LayerDescriptor.js')}"></script>
     <script type="text/javascript" src="${resource(dir: 'js/portal/common', file: 'BrowserWindow.js')}"></script>
-    <script type="text/javascript" src="${resource(dir: 'js/portal/common', file: 'ActionColumn.js')}"></script>
-    <script type="text/javascript" src="${resource(dir: 'js/portal/common', file: 'SaveDialog.js')}"></script>
     <script type="text/javascript" src="${resource(dir: 'js/portal/common', file: 'MapPanel.js')}"></script>
-    <script type="text/javascript" src="${resource(dir: 'js/portal/common', file: 'Controller.js')}"></script>
     <script type="text/javascript" src="${resource(dir: 'js/portal/common', file: 'EmptyCollectionsStatusPanel.js')}"></script>
     <script type="text/javascript" src="${resource(dir: 'js/portal/data', file: 'LayerStore.js')}"></script>
     <script type="text/javascript" src="${resource(dir: 'js/portal/data', file: 'SuggestionStore.js')}"></script>
@@ -78,9 +83,6 @@
     <script type="text/javascript" src="${resource(dir: 'js/portal/search/data', file: 'GeoNetworkSearchResponseLoader.js')}"></script>
     <script type="text/javascript" src="${resource(dir: 'js/portal/search/field', file: 'DateRange.js')}"></script>
     <script type="text/javascript" src="${resource(dir: 'js/portal/search/field', file: 'FacetedDateRange.js')}"></script>
-    <script type="text/javascript" src="${resource(dir: 'js/portal/search/field', file: 'MultiSelectCombo.js')}"></script>
-    <script type="text/javascript" src="${resource(dir: 'js/portal/search/field', file: 'CheckBox.js')}"></script>
-    <script type="text/javascript" src="${resource(dir: 'js/portal/search/field', file: 'ValueCheckBox.js')}"></script>
     <script type="text/javascript" src="${resource(dir: 'js/portal/search', file: 'GeoFacetMapToolbar.js')}"></script>
     <script type="text/javascript" src="${resource(dir: 'js/portal/search', file: 'FacetMapPanel.js')}"></script>
     <script type="text/javascript" src="${resource(dir: 'js/portal/search', file: 'FacetedSearchResultsMiniMap.js')}"></script>

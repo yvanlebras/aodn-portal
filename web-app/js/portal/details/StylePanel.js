@@ -37,7 +37,7 @@ Portal.details.StylePanel = Ext.extend(Ext.Container, {
 
         //create an opacity slider
         //usability bug #624 where the opacity slider thumb sits at the minimum slider value instead of the maximum one
-        this.opacitySlider = new Portal.common.LayerOpacitySliderFixed({
+        this.opacitySlider = Ext.create('GeoExt.slider.LayerOpacity', {
             layer: new OpenLayers.Layer("Dummy Layer"),
             keyIncrement: 10,
             increment: 5,

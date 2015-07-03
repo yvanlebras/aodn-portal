@@ -4,8 +4,8 @@
  *
  * DateTime field, combination of DateField and TimeField
  *
- * @author      Ing. Jozef Sakáloš
- * @copyright (c) 2008, Ing. Jozef Sakáloš
+ * @author      Ing. Jozef Sakï¿½loï¿½
+ * @copyright (c) 2008, Ing. Jozef Sakï¿½loï¿½
  * @version   2.0
  * @revision  $Id: Ext.ux.form.DateTime.js 603 2009-03-04 22:27:06Z jozo $
  *
@@ -36,7 +36,8 @@ Ext.ns('Ext.ux.form');
  * @constructor
  * @param {Object} config A config object
  */
-Ext.ux.form.DateTime = Ext.extend(Ext.form.Field, {
+Ext.define('Ext.ux.form.DateTime', {
+    extend: 'Ext.form.Field',
     /**
      * @cfg {String/Object} defaultAutoCreate DomHelper element spec
      * Let superclass to create hidden field instead of textbox. Hidden will be submittend to server
@@ -643,7 +644,4 @@ Ext.ux.form.DateTime = Ext.extend(Ext.form.Field, {
     } // eo function renderer
     // }}}
 
-}); // eo extend
-
-// register xtype
-Ext.reg('xdatetime', Ext.ux.form.DateTime);
+});

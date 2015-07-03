@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2012 IMOS
  *
@@ -8,7 +7,8 @@
 
 Ext.namespace('Portal.search.field');
 
-Portal.search.field.DateRange = Ext.extend(Ext.Container, {
+Ext.define('Portal.search.field.DateRange', {
+    extend: 'Ext.Container',
     layout: 'hbox',
 
     initComponent: function() {
@@ -63,6 +63,3 @@ Portal.search.field.DateRange = Ext.extend(Ext.Container, {
         this.toDate.setValue(new Date(v.toDate));
     }
 });
-
-Ext.reg('portal.search.field.daterange', Portal.search.field.DateRange);
-

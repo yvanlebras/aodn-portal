@@ -7,7 +7,8 @@
 
 Ext.namespace('Portal.ui');
 
-Portal.ui.FeatureInfoPopup = Ext.extend(GeoExt.Popup, {
+Ext.define('Portal.ui.FeatureInfoPopup', {
+    extend: 'GeoExt.window.Popup',
 
     constructor: function(cfg) {
         this.numResultsToLoad = 0;

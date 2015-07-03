@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2012 IMOS
  *
@@ -10,7 +9,8 @@ Ext.namespace('Portal.common');
 
 /* Code common to main map and minimap */
 
-Portal.common.MapPanel = Ext.extend(GeoExt.MapPanel, {
+Ext.define('Portal.common.MapPanel', {
+    extend: 'GeoExt.panel.Map',
 
     constructor: function(cfg) {
         var defaultZoom = this.getMapDefaultZoom(cfg.initialBbox);

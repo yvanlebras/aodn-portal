@@ -24,7 +24,8 @@ Ext.ns('GeoExt.ux');
  * @extends Ext.form.ComboBox
  *
  */
-GeoExt.ux.BaseLayerComboBox = Ext.extend(Ext.form.ComboBox, {
+Ext.define('GeoExt.ux.BaseLayerComboBox', {
+    extend: 'Ext.form.ComboBox',
 
     /** api: config[map]
      *  ``OpenLayers.Map or Object``  A configured map or a configuration object
@@ -170,7 +171,4 @@ GeoExt.ux.BaseLayerComboBox = Ext.extend(Ext.form.ComboBox, {
     onAddLayer: function(evt) {
         GeoExt.ux.BaseLayerComboBox.superclass.onAddLayer.apply(this, evt);
     }
-});
-
-/** api: xtype = gxux_baselayer_combobox */
-Ext.reg('gxux_baselayer_combobox', GeoExt.ux.BaseLayerComboBox);
+})
