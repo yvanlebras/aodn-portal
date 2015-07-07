@@ -20,23 +20,26 @@
 
 <script src="${resource(dir: 'js/portal/common', file: 'helpers.js')}" type="text/javascript"></script>
 
-
 <g:if env="development">
-    <script src="${resource(dir: 'js/ext-3.3.1/adapter/ext', file: 'ext-base-debug.js')}" type="text/javascript"></script>
-    <script src="${resource(dir: 'js/ext-3.3.1', file: 'ext-all-debug.js')}" type="text/javascript"></script>
-    <script src="${resource(dir: 'js/OpenLayers-2.13.1', file: 'OpenLayers.js')}" type="text/javascript"></script>
-    <script src="${resource(dir: 'js/OpenLayers-2.13.1/lib', file: 'deprecated.js')}" type="text/javascript"></script>
-    <!--- GeoExt (Has to be after Openlayers and ExJS) -->
-    <script src="${resource(dir: 'js/GeoExt1.1/lib', file: 'GeoExt.js')}" type="text/javascript"></script>
+    <script src="${resource(dir: 'js/extjs-4.1.1', file: 'ext-all-debug.js')}" type="text/javascript"></script>
 </g:if>
 <g:else>
-    <script src="${resource(dir: 'js/ext-3.3.1/adapter/ext', file: 'ext-base.js')}" type="text/javascript"></script>
-    <script src="${resource(dir: 'js/ext-3.3.1', file: 'ext-all.js')}" type="text/javascript"></script>
-    <script src="${resource(dir: 'js/OpenLayers-2.13.1', file: 'OpenLayers.js')}" type="text/javascript"></script>
-    <script src="${resource(dir: 'js/OpenLayers-2.13.1/lib', file: 'deprecated.js')}" type="text/javascript"></script>
-    <!--- GeoExt (Has to be after Openlayers and ExJS) -->
-    <script src="${resource(dir: 'js/GeoExt1.1/script', file: 'GeoExt.js')}" type="text/javascript"></script>
+    <script src="${resource(dir: 'js/extjs-4.1.1', file: 'ext-all.js')}" type="text/javascript"></script>
 </g:else>
+
+<!-- Ext 3 Compatibility (remove after migration is complete) -->
+<script src="${resource(dir: 'js/ext-3.3.1', file: 'ext3-core-compat.js')}" type="text/javascript"></script>
+<script src="${resource(dir: 'js/ext-3.3.1', file: 'ext3-compat.js')}" type="text/javascript"></script>
+<script type="text/javascript">
+    <!-- Ext 3 Compatibility (remove after migration is complete) -->
+    Ext.Compat.showErrors = true;
+</script>
+
+
+<script src="${resource(dir: 'js/OpenLayers-2.13.1', file: 'OpenLayers.js')}" type="text/javascript"></script>
+<script src="${resource(dir: 'js/OpenLayers-2.13.1/lib', file: 'deprecated.js')}" type="text/javascript"></script>
+<!--- GeoExt (Has to be after Openlayers and ExJS) -->
+<script src="${resource(dir: 'js/geoext2-2.0.3/src/GeoExt', file: 'Version.js')}" type="text/javascript"></script>
 
 <script src="${resource(dir: 'js/ext-ux/form', file: 'DateTime.js')}" type="text/javascript"></script>
 <script src="${resource(dir: 'js/ext-ux/SuperBoxSelect', file: 'SuperBoxSelect.js')}" type="text/javascript"></script>

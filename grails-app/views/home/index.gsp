@@ -34,6 +34,9 @@ The AODN/IMOS Portal is distributed under the terms of the GNU General Public Li
                 window.location.replace(homeWithoutTrailingSlash);
             }
 
+            <!-- Ext 3 Compatibility (remove after migration is complete) -->
+            Ext.Compat.showErrors = true;
+
             // Supporting only Firefox and Chrome users
             Ext.onReady(Portal.app.browserCheck);
             // Init step One
