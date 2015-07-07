@@ -10,7 +10,7 @@ Ext.namespace('Portal.filter.ui');
 /**
    This is the base type of all filters for geoserver layers.
 **/
-Portal.filter.ui.BaseFilterPanel = Ext.extend(Ext.Panel, {
+Ext.define('Portal.filter.ui.BaseFilterPanel', { extend: 'Ext.Panel',
 
     MAX_COMPONENT_WIDTH: 300,
 

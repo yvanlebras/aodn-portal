@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.ui');
 
-Portal.ui.MainToolbar = Ext.extend(Ext.Toolbar, {
+Ext.define('Portal.ui.MainToolbar', { extend: 'Ext.Toolbar',
 
     constructor: function(cfg) {
 

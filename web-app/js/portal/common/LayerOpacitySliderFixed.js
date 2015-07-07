@@ -11,7 +11,7 @@ Ext.namespace('Portal.common');
 
 /!* Code common to main map and minimap *!/
 
-Portal.common.LayerOpacitySliderFixed = Ext.extend(GeoExt.LayerOpacitySlider, {
+Ext.define('Portal.common.LayerOpacitySliderFixed', { extend: 'GeoExt.LayerOpacitySlider',
     //WARNING, inverse doesn't won't work with this class.
         /!** private: method[getOpacityValue]
      *  :param layer: ``OpenLayers.Layer`` or :class:`GeoExt.data.LayerRecord`

@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.filter.combiner');
 
-Portal.filter.combiner.BodaacCqlBuilder = Ext.extend(Portal.filter.combiner.FilterCqlBuilder, {
+Ext.define('Portal.filter.combiner.BodaacCqlBuilder', { extend: 'Portal.filter.combiner.FilterCqlBuilder',
 
     buildCql: function() {
 

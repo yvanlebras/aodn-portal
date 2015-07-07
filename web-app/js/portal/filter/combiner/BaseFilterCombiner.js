@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.filter.combiner');
 
-Portal.filter.combiner.BaseFilterCombiner = Ext.extend(Object, {
+Ext.define('Portal.filter.combiner.BaseFilterCombiner', { extend: 'Object',
 
     constructor: function(cfg) {
 

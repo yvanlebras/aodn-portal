@@ -6,7 +6,7 @@
  */
 Ext.namespace('Portal.details');
 
-Portal.details.PolygonDisplayPanel = Ext.extend(Ext.grid.GridPanel, {
+Ext.define('Portal.details.PolygonDisplayPanel', { extend: 'Ext.grid.GridPanel',
 
     constructor: function(cfg) {
 

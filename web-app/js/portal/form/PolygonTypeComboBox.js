@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.form');
 
-Portal.form.PolygonTypeComboBox = Ext.extend(Ext.form.ComboBox, {
+Ext.define('Portal.form.PolygonTypeComboBox', { extend: 'Ext.form.ComboBox',
 
     constructor: function(cfg) {
         var config = Ext.apply({

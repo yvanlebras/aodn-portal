@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.ui');
 
-Portal.ui.TimeRangeLabel = Ext.extend(Ext.form.Label, {
+Ext.define('Portal.ui.TimeRangeLabel', { extend: 'Ext.form.Label',
 
     constructor: function(cfg) {
         var config = Ext.apply({

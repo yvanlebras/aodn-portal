@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.cart');
 
-Portal.cart.GogoduckDownloadHandler = Ext.extend(Portal.cart.DownloadHandler, {
+Ext.define('Portal.cart.GogoduckDownloadHandler', { extend: 'Portal.cart.DownloadHandler',
 
     ASYNC_DOWNLOAD_URL: 'asyncDownload?aggregatorService=gogoduck&',
 

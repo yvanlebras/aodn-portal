@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.details');
 
-Portal.details.SpatialConstraintDisplayPanel = Ext.extend(Ext.Panel, {
+Ext.define('Portal.details.SpatialConstraintDisplayPanel', { extend: 'Ext.Panel',
     constructor: function(cfg) {
 
         this.boxDisplayPanel = new Portal.details.BoxDisplayPanel(cfg);

@@ -12,7 +12,7 @@ Ext.namespace('Portal.common');
  * Layer descriptor constructs OpenLayers WMS object with parameters from
  * server and geonetwork record
  */
-Portal.common.LayerDescriptor = Ext.extend(Object, {
+Ext.define('Portal.common.LayerDescriptor', { extend: 'Object',
 
     WFS_PROTOCOL: 'OGC:WFS-1.0.0-http-get-capabilities',
     WMS_PROTOCOL: 'OGC:WMS-1.1.1-http-get-map',

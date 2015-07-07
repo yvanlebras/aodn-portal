@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.filter.combiner');
 
-Portal.filter.combiner.FilterCqlBuilder = Ext.extend(Portal.filter.combiner.BaseFilterCombiner, {
+Ext.define('Portal.filter.combiner.FilterCqlBuilder', { extend: 'Portal.filter.combiner.BaseFilterCombiner',
 
     _joinCql: function(parts) {
 

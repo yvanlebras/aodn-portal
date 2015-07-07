@@ -18,7 +18,7 @@ Ext.namespace('Portal.visualise.animations');
  * The moments in the array are not guaranteed to be ordered. The hash of the
  * dates is also not ordered because it's a hash!
  */
-Portal.visualise.animations.TemporalExtent = Ext.extend(Ext.util.Observable, {
+Ext.define('Portal.visualise.animations.TemporalExtent', { extend: 'Ext.util.Observable',
     // Date format used for stringifying/destringifying moments
     DATE_FORMAT: "YYYY-MM-DD",
 

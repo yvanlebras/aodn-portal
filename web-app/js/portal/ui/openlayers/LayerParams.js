@@ -8,7 +8,7 @@
 
 Ext.namespace('Portal.ui.openlayer');
 
-Portal.ui.openlayers.LayerParams = Ext.extend(Object, {
+Ext.define('Portal.ui.openlayers.LayerParams', { extend: 'Object',
 
     constructor: function(layerDescriptor, overrides) {
 

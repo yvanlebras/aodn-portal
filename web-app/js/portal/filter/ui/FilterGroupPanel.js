@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.filter.ui');
 
-Portal.filter.ui.FilterGroupPanel = Ext.extend(Ext.Container, {
+Ext.define('Portal.filter.ui.FilterGroupPanel', { extend: 'Ext.Container',
     constructor: function(cfg) {
 
         this.layer = cfg.layer;

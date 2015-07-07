@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.ui');
 
-Portal.ui.NavigableCardLayout = Ext.extend(Ext.layout.CardLayout, {
+Ext.define('Portal.ui.NavigableCardLayout', { extend: 'Ext.layout.CardLayout',
     hasNextTab: function() {
         return this.activeItem != this.container.items.last();
     },

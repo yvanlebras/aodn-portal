@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.filter');
 
-Portal.filter.DateFilter = Ext.extend(Portal.filter.Filter, {
+Ext.define('Portal.filter.DateFilter', { extend: 'Portal.filter.Filter',
 
     constructor: function(cfg) {
 

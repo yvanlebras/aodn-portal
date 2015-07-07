@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.details');
 
-Portal.details.InfoPanel = Ext.extend(Ext.Container, {
+Ext.define('Portal.details.InfoPanel', { extend: 'Ext.Container',
 
     constructor: function(cfg) {
 

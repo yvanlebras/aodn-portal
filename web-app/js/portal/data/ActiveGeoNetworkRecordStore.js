@@ -6,7 +6,7 @@
  */
 Ext.namespace('Portal.data');
 
-Portal.data.ActiveGeoNetworkRecordStore = Ext.extend(Portal.data.GeoNetworkRecordStore, {
+Ext.define('Portal.data.ActiveGeoNetworkRecordStore', { extend: 'Portal.data.GeoNetworkRecordStore',
 
     recordAttributes: {},
 

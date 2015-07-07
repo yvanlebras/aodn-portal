@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.ui');
 
-Portal.ui.openlayers.MapOptions = Ext.extend(Object, {
+Ext.define('Portal.ui.openlayers.MapOptions', { extend: 'Object',
 
     constructor: function (cfg, mapPanel) {
         var config = Ext.apply({}, cfg);

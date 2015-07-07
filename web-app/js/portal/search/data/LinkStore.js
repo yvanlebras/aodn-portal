@@ -8,7 +8,7 @@
 
 Ext.namespace('Portal.search.data');
 
-Portal.search.data.LinkStore = Ext.extend(Ext.data.JsonStore, {
+Ext.define('Portal.search.data.LinkStore', { extend: 'Ext.data.JsonStore',
     constructor : function(cfg) {
         cfg = cfg || {};
 

@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.filter.validation');
 
-Portal.filter.validation.SpatialConstraintValidator = Ext.extend(Object, {
+Ext.define('Portal.filter.validation.SpatialConstraintValidator', { extend: 'Object',
 
     MIN_AREA_PERCENT: 0.01,
 

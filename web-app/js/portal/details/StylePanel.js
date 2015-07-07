@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.details');
 
-Portal.details.StylePanel = Ext.extend(Ext.Container, {
+Ext.define('Portal.details.StylePanel', { extend: 'Ext.Container',
 
     constructor: function(cfg) {
         this.layer = cfg.layer;

@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.cart');
 
-Portal.cart.DownloadHandler = Ext.extend(Object, {
+Ext.define('Portal.cart.DownloadHandler', { extend: 'Object',
 
     DATE_FORMAT_FOR_PORTAL: 'YYYY-MM-DD[T]HH:mm:ss.SSS[Z]',
     DEFAULT_LAT_START: -90,

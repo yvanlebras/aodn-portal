@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.cart');
 
-Portal.cart.PythonDownloadHandler = Ext.extend(Portal.cart.DownloadHandler, {
+Ext.define('Portal.cart.PythonDownloadHandler', { extend: 'Portal.cart.DownloadHandler',
 
     getDownloadOptions: function() {
         var downloadOptions = [];

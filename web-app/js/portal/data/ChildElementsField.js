@@ -13,7 +13,7 @@ Ext.namespace('Portal.data');
  *
  */
 
-Portal.data.ChildElementsField = Ext.extend(Ext.data.Field, {
+Ext.define('Portal.data.ChildElementsField', { extend: 'Ext.data.Field',
 
     convert: function(v, record) {
         var values = [];

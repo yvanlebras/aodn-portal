@@ -8,7 +8,7 @@
 
 Ext.namespace('Portal.data');
 
-Portal.data.LayerDataPanelStore = Ext.extend(Ext.data.JsonStore, {
+Ext.define('Portal.data.LayerDataPanelStore', { extend: 'Ext.data.JsonStore',
 
     constructor: function(cfg) {
         var config = Ext.apply({

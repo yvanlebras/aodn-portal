@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.details');
 
-Portal.details.SubsetItemsWrapperPanel = Ext.extend(Ext.Panel, {
+Ext.define('Portal.details.SubsetItemsWrapperPanel', { extend: 'Ext.Panel',
 
     constructor: function(cfg) {
 

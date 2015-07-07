@@ -8,7 +8,7 @@
 Ext.namespace('Portal.utils');
 
 // An inefficient and naive implementation for a set using an array
-Portal.utils.Set = Ext.extend(Object, {
+Ext.define('Portal.utils.Set', { extend: 'Object',
     _arr: null,
 
     constructor: function() {

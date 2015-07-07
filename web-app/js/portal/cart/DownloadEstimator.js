@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.cart');
 
-Portal.cart.DownloadEstimator = Ext.extend(Object, {
+Ext.define('Portal.cart.DownloadEstimator', { extend: 'Object',
 
     HALF_GB_IN_BYTES: 536870912,
     EST_FAIL_CODE: -1,

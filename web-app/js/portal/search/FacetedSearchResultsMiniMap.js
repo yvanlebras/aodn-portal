@@ -6,7 +6,7 @@
  */
 Ext.namespace('Portal.search');
 
-Portal.search.FacetedSearchResultsMiniMap = Ext.extend(OpenLayers.Map, {
+Ext.define('Portal.search.FacetedSearchResultsMiniMap', { extend: 'OpenLayers.Map',
 
     EPSG_4326_PROJECTION: new OpenLayers.Projection("EPSG:4326"),
 

@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.ui');
 
-Portal.ui.VisualisePanel = Ext.extend(Ext.Panel, {
+Ext.define('Portal.ui.VisualisePanel', { extend: 'Ext.Panel',
 
     constructor: function(cfg) {
 

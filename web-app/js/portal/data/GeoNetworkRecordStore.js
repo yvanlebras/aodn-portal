@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.data');
 
-Portal.data.GeoNetworkRecordStore = Ext.extend(Ext.data.XmlStore, {
+Ext.define('Portal.data.GeoNetworkRecordStore', { extend: 'Ext.data.XmlStore',
 
     constructor : function() {
 

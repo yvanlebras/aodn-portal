@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.cart');
 
-Portal.cart.BodaacDownloadHandler = Ext.extend(Portal.cart.DownloadHandler, {
+Ext.define('Portal.cart.BodaacDownloadHandler', { extend: 'Portal.cart.DownloadHandler',
 
     NAME_FIELD_DELIMETER: "#",
     LAYER_NAME_INDEX: 0,

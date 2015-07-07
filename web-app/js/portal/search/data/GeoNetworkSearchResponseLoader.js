@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.ui.search.data');
 
-Portal.ui.search.data.GeoNetworkSearchResponseLoader = Ext.extend(Ext.ux.tree.XmlTreeLoader, {
+Ext.define('Portal.ui.search.data.GeoNetworkSearchResponseLoader', { extend: 'Ext.ux.tree.XmlTreeLoader',
 
     createNode: function(attr) {
         return Portal.ui.search.data.GeoNetworkSearchResponseLoader.superclass.createNode.call(this, attr);

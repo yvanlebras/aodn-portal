@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.search');
 
-Portal.search.FacetDrilldownPanel = Ext.extend(Ext.tree.TreePanel, {
+Ext.define('Portal.search.FacetDrilldownPanel', { extend: 'Ext.tree.TreePanel',
     constructor: function(cfg) {
         cfg = cfg || {};
 

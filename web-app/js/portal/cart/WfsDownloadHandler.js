@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.cart');
 
-Portal.cart.WfsDownloadHandler = Ext.extend(Portal.cart.DownloadHandler, {
+Ext.define('Portal.cart.WfsDownloadHandler', { extend: 'Portal.cart.DownloadHandler',
 
     getDownloadOptions: function() {
 

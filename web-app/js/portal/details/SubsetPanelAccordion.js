@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.details');
 
-Portal.details.SubsetPanelAccordion = Ext.extend(Ext.Panel, {
+Ext.define('Portal.details.SubsetPanelAccordion', { extend: 'Ext.Panel',
 
     constructor: function(cfg) {
 

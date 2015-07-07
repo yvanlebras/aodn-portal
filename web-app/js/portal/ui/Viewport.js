@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.ui');
 
-Portal.ui.Viewport = Ext.extend(Ext.Viewport, {
+Ext.define('Portal.ui.Viewport', { extend: 'Ext.Viewport',
     constructor: function(cfg) {
 
         // approximate height of viewport main tabs. css will impact on this buffer

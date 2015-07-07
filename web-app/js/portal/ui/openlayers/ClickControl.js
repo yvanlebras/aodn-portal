@@ -8,7 +8,7 @@
 
 Ext.namespace('Portal.ui.openlayers');
 
-Portal.ui.openlayers.ClickControl = Ext.extend(OpenLayers.Control, {
+Ext.define('Portal.ui.openlayers.ClickControl', { extend: 'OpenLayers.Control',
     defaultHandlerOptions: {
         'single': true,
         'double': true,

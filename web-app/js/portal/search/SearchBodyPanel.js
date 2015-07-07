@@ -9,7 +9,7 @@ Ext.namespace('Portal.search');
 // TODO: note that this panel is probably redundant now that it has only one child - we can just use
 // FacetedSearchResultsGrid where this panel is used - however, waiting for Phil's latest changes
 // to be merged before getting rid of this (else there will be conflicts).
-Portal.search.SearchBodyPanel = Ext.extend(Ext.Panel, {
+Ext.define('Portal.search.SearchBodyPanel', { extend: 'Ext.Panel',
 
     constructor: function (cfg) {
 

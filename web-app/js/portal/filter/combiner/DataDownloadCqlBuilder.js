@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.filter.combiner');
 
-Portal.filter.combiner.DataDownloadCqlBuilder = Ext.extend(Portal.filter.combiner.FilterCqlBuilder, {
+Ext.define('Portal.filter.combiner.DataDownloadCqlBuilder', { extend: 'Portal.filter.combiner.FilterCqlBuilder',
 
     buildCql: function() {
 

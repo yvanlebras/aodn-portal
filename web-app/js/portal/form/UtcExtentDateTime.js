@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.form');
 
-Portal.form.UtcExtentDateTime = Ext.extend(Ext.ux.form.DateTime, {
+Ext.define('Portal.form.UtcExtentDateTime', { extend: 'Ext.ux.form.DateTime',
 
     initComponent: function() {
         Portal.form.UtcExtentDateTime.superclass.initComponent.call(this);

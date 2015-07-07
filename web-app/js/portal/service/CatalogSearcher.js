@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.service');
 
-Portal.service.CatalogSearcher = Ext.extend(Ext.util.Observable, {
+Ext.define('Portal.service.CatalogSearcher', { extend: 'Ext.util.Observable',
     DRILLDOWN_PARAMETER_NAME: "facet.q",
 
     constructor: function(cfg) {

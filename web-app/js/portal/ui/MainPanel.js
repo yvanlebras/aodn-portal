@@ -11,7 +11,7 @@ TAB_INDEX_SEARCH = 0;
 TAB_INDEX_VISUALISE = 1;
 TAB_INDEX_DOWNLOAD = 2;
 
-Portal.ui.MainPanel = Ext.extend(Ext.Panel, {
+Ext.define('Portal.ui.MainPanel', { extend: 'Ext.Panel',
 
     constructor: function(cfg) {
 

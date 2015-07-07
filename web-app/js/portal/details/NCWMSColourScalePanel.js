@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.details');
 
-Portal.details.NCWMSColourScalePanel = Ext.extend(Ext.Panel, {
+Ext.define('Portal.details.NCWMSColourScalePanel', { extend: 'Ext.Panel',
 
     layout: 'form',
 

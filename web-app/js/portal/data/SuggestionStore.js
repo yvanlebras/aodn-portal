@@ -8,7 +8,7 @@
 
 Ext.namespace('Portal.data.SuggestionStore');
 
-Portal.data.SuggestionStore = Ext.extend(Ext.data.XmlStore, {
+Ext.define('Portal.data.SuggestionStore', { extend: 'Ext.data.XmlStore',
     constructor : function(cfg) {
         var config = Ext.apply({
             autoDestroy : true,

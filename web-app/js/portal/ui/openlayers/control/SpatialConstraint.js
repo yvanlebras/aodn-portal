@@ -11,7 +11,7 @@ Portal.ui.openlayers.SpatialConstraintType = {
     BOUNDING_BOX: 'bounding box'
 };
 
-Portal.ui.openlayers.control.SpatialConstraint = Ext.extend(OpenLayers.Control.DrawFeature, {
+Ext.define('Portal.ui.openlayers.control.SpatialConstraint', { extend: 'OpenLayers.Control.DrawFeature',
 
     SPATIAL_EXTENT_ERROR_TIMEOUT: 1200,
 

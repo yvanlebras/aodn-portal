@@ -6,7 +6,7 @@
  */
 Ext.namespace('Portal.cart');
 
-Portal.cart.DownloadChallengePanel = Ext.extend(Ext.Panel, {
+Ext.define('Portal.cart.DownloadChallengePanel', { extend: 'Ext.Panel',
 
     challenged: false,
 

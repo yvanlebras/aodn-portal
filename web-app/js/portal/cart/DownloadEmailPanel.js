@@ -6,7 +6,7 @@
  */
 Ext.namespace('Portal.cart');
 
-Portal.cart.DownloadEmailPanel = Ext.extend(Ext.Panel, {
+Ext.define('Portal.cart.DownloadEmailPanel', { extend: 'Ext.Panel',
 
     initComponent: function() {
 

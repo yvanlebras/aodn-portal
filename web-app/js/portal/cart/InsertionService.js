@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.cart');
 
-Portal.cart.InsertionService = Ext.extend(Object, {
+Ext.define('Portal.cart.InsertionService', { extend: 'Object',
 
     constructor: function(downloadPanel) {
 

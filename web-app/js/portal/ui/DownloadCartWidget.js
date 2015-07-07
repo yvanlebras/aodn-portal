@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.ui');
 
-Portal.ui.DownloadCartWidget = Ext.extend(Ext.Panel, {
+Ext.define('Portal.ui.DownloadCartWidget', { extend: 'Ext.Panel',
 
     constructor: function(cfg) {
 

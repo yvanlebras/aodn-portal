@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.data');
 
-Portal.data.GeoNetworkRecordFetcher = Ext.extend(Ext.util.Observable, {
+Ext.define('Portal.data.GeoNetworkRecordFetcher', { extend: 'Ext.util.Observable',
 
     constructor: function(config) {
         Ext.apply(this, config);

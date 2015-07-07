@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.filter.ui');
 
-Portal.filter.ui.NumberFilterPanel = Ext.extend(Portal.filter.ui.BaseFilterPanel, {
+Ext.define('Portal.filter.ui.NumberFilterPanel', { extend: 'Portal.filter.ui.BaseFilterPanel',
 
     OPERATOR_CLEAR: 'CLR',
     OPERATOR_BETWEEN: 'BTWN',

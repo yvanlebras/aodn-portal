@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.details');
 
-Portal.details.SpatialSubsetControlsPanel = Ext.extend(Ext.Panel, {
+Ext.define('Portal.details.SpatialSubsetControlsPanel', { extend: 'Ext.Panel',
 
     constructor: function(cfg) {
 

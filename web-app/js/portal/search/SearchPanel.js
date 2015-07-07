@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.search');
 
-Portal.search.SearchPanel = Ext.extend(Ext.Panel, {
+Ext.define('Portal.search.SearchPanel', { extend: 'Ext.Panel',
 
     constructor: function (cfg) {
 

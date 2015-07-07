@@ -6,7 +6,7 @@
  */
 Ext.namespace('Portal.search');
 
-Portal.search.GeoSelectionPanel = Ext.extend(Ext.Panel, {
+Ext.define('Portal.search.GeoSelectionPanel', { extend: 'Ext.Panel',
     padding:5,
 
     GEOMETRY_FIELD: 'geometry',

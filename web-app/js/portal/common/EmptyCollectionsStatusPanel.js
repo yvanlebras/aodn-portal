@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.common');
 
-Portal.common.EmptyCollectionStatusPanel = Ext.extend(Ext.Container, {
+Ext.define('Portal.common.EmptyCollectionStatusPanel', { extend: 'Ext.Container',
 
     constructor: function(cfg) {
 

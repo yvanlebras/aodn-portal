@@ -1,6 +1,6 @@
 Ext.namespace('Portal.visualise.animations');
 
-Portal.visualise.animations.TemporalExtentParser = Ext.extend(Object, {
+Ext.define('Portal.visualise.animations.TemporalExtentParser', { extend: 'Object',
 
     expandExtendedDates: function(splitDates, startIndex, endIndex) {
         /*

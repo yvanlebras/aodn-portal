@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.filter');
 
-Portal.filter.BooleanFilter = Ext.extend(Portal.filter.Filter, {
+Ext.define('Portal.filter.BooleanFilter', { extend: 'Portal.filter.Filter',
 
     getSupportedGeoserverTypes: function() {
 

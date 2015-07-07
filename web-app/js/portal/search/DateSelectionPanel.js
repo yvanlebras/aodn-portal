@@ -6,7 +6,7 @@
  */
 Ext.namespace('Portal.search');
 
-Portal.search.DateSelectionPanel = Ext.extend(Ext.Panel, {
+Ext.define('Portal.search.DateSelectionPanel', { extend: 'Ext.Panel',
     padding: 5,
 
     constructor: function (cfg) {

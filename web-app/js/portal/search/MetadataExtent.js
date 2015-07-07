@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.search');
 
-Portal.search.MetadataExtent = Ext.extend(Object, {
+Ext.define('Portal.search.MetadataExtent', { extend: 'Object',
 
     constructor:function (cfg) {
         this.geometries = [];

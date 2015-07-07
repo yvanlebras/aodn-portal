@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.filter.ui');
 
-Portal.filter.ui.DateFilterPanel = Ext.extend(Portal.filter.ui.BaseFilterPanel, {
+Ext.define('Portal.filter.ui.DateFilterPanel', { extend: 'Portal.filter.ui.BaseFilterPanel',
 
     constructor: function(cfg) {
         var config = Ext.apply({

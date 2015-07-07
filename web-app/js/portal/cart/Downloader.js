@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.cart');
 
-Portal.cart.Downloader = Ext.extend(Ext.util.Observable, {
+Ext.define('Portal.cart.Downloader', { extend: 'Ext.util.Observable',
 
     constructor: function(config) {
         this.addEvents('downloadrequested', 'downloadstarted', 'downloadfailed');

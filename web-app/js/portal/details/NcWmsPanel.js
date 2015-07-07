@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.details');
 
-Portal.details.NcWmsPanel = Ext.extend(Ext.Container, {
+Ext.define('Portal.details.NcWmsPanel', { extend: 'Ext.Container',
 
     ROW_HEIGHT: 32,
     ROW_WIDTH: 255,

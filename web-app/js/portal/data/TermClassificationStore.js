@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.data');
 
-Portal.data.TermClassificationStore = Ext.extend(Ext.data.XmlStore, {
+Ext.define('Portal.data.TermClassificationStore', { extend: 'Ext.data.XmlStore',
 
     constructor : function() {
         var config = {

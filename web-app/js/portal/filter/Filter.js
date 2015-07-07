@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.filter');
 
-Portal.filter.Filter = Ext.extend(Object, {
+Ext.define('Portal.filter.Filter', { extend: 'Object',
 
     constructor: function(cfg) {
 

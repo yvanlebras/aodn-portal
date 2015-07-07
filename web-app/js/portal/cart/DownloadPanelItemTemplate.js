@@ -6,7 +6,7 @@
  */
 Ext.namespace('Portal.cart');
 
-Portal.cart.DownloadPanelItemTemplate = Ext.extend(Ext.XTemplate, {
+Ext.define('Portal.cart.DownloadPanelItemTemplate', { extend: 'Ext.XTemplate',
 
     constructor: function(cfg) {
 

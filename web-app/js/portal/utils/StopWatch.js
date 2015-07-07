@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.utils');
 
-Portal.utils.StopWatch = Ext.extend(Ext.util.Observable, {
+Ext.define('Portal.utils.StopWatch', { extend: 'Ext.util.Observable',
 
     start: function() {
         this.startTimestamp = this._now();

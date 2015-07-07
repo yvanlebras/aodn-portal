@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.filter.combiner');
 
-Portal.filter.combiner.HumanReadableFilterDescriber = Ext.extend(Portal.filter.combiner.BaseFilterCombiner, {
+Ext.define('Portal.filter.combiner.HumanReadableFilterDescriber', { extend: 'Portal.filter.combiner.BaseFilterCombiner',
 
     buildDescription: function(joiner) {
 

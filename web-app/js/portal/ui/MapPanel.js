@@ -7,9 +7,8 @@
 
 Ext.namespace('Portal.ui');
 
-Ext.define('Portal.ui.MapPanel', {
+Ext.define('Portal.ui.MapPanel', { extend: 'Portal.common.MapPanel',
 
-    extend: 'Portal.common.MapPanel',
     loadSpinner: null,
 
     defaultSpatialConstraintType: OpenLayers.i18n('comboBoxTypeLabels')[0].value,

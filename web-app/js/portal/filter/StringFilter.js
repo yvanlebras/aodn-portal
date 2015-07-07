@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.filter');
 
-Portal.filter.StringFilter = Ext.extend(Portal.filter.Filter, {
+Ext.define('Portal.filter.StringFilter', { extend: 'Portal.filter.Filter',
 
     getSupportedGeoserverTypes: function() {
 

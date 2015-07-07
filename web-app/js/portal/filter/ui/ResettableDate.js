@@ -6,7 +6,7 @@
  */
 Ext.namespace('Portal.filter.ui');
 
-Portal.filter.ui.ResettableDate = Ext.extend(Ext.Container, {
+Ext.define('Portal.filter.ui.ResettableDate', { extend: 'Ext.Container',
     ELEMENT_HEIGHT: 25,
     ELEMENT_WIDTH: 110,
 

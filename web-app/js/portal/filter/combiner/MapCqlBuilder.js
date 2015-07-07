@@ -7,7 +7,7 @@
 
 Ext.namespace('Portal.filter.combiner');
 
-Portal.filter.combiner.MapCqlBuilder = Ext.extend(Portal.filter.combiner.FilterCqlBuilder, {
+Ext.define('Portal.filter.combiner.MapCqlBuilder', { extend: 'Portal.filter.combiner.FilterCqlBuilder',
 
     _appropriateFilters: function() {
 
