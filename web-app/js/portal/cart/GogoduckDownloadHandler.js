@@ -99,7 +99,7 @@ Ext.define('Portal.cart.GogoduckDownloadHandler', { extend: 'Portal.cart.Downloa
 
         this._trackUsage(layerName, args.subsetDescriptor);
 
-        var paramsAsJson = Ext.util.JSON.encode(args);
+        var paramsAsJson = Ext.JSON.encode(args);
 
         return String.format(this.ASYNC_DOWNLOAD_URL + 'jobParameters={0}', encodeURIComponent(paramsAsJson));
     },

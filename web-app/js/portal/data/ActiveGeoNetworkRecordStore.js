@@ -116,7 +116,7 @@ Ext.define('Portal.data.ActiveGeoNetworkRecordStore', { extend: 'Portal.data.Geo
             items.push(item.convertedData());
         });
 
-        return Ext.util.JSON.encode(items);
+        return Ext.JSON.encode(items);
     },
 
     addRecordAttribute: function(uuid, key, value) {

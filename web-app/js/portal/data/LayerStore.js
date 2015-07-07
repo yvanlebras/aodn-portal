@@ -38,7 +38,7 @@ Ext.define('Portal.data.LayerStore', {
             scope: this,
             success: function(resp) {
                 try {
-                    var serverInfo = Ext.util.JSON.decode(resp.responseText);
+                    var serverInfo = Ext.JSON.decode(resp.responseText);
                     this._serverInfoLoaded(layerDisplayName, layerLink, geonetworkRecord, layerRecordCallback, serverInfo);
                 }
                 catch (e) {
@@ -243,7 +243,7 @@ Ext.define('Portal.data.LayerStore', {
             url: 'layer/configuredBaselayers',
             scope: this,
             success: function(resp) {
-                var layerDescriptorsAsText = Ext.util.JSON.decode(resp.responseText);
+                var layerDescriptorsAsText = Ext.JSON.decode(resp.responseText);
 
                 Ext.each(layerDescriptorsAsText, function(layerDescriptorAsText) {
                     var layerDescriptor = new Portal.common.LayerDescriptor(layerDescriptorAsText);

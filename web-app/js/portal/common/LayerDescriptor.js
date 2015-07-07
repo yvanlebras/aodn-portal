@@ -21,7 +21,7 @@ Ext.define('Portal.common.LayerDescriptor', { extend: 'Object',
 
     constructor: function(cfg, geonetworkRecord, openLayerClass) {
         if (typeof cfg == "string") {
-            cfg = Ext.util.JSON.decode(cfg);
+            cfg = Ext.JSON.decode(cfg);
         }
 
         if (!openLayerClass) {
