@@ -92,6 +92,14 @@ Portal.app = {
         Ext.MessageBox.alert('Error', 'There was a problem loading the Portal.<br>Refreshing the page may resolve the problem.');
     },
 
+    ajaxAction: function(request) {
+        if (request == 'show') {
+            jQuery('.extAjaxLoading').show(100);
+        }
+        else {
+            jQuery('.extAjaxLoading').hide('slow');
+        }
+    }
 };
 
 // sets the tab from the external links in the header

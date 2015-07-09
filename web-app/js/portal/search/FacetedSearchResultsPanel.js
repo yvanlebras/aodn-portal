@@ -11,7 +11,6 @@ Ext.define('Portal.search.FacetedSearchResultsPanel', {
     extend: 'Ext.Panel',
 
     initComponent:function () {
-
         this.pagingBar = new Ext.PagingToolbar({
             pageSize: this.searcher.pageSize,
             store: this.store,

@@ -118,12 +118,12 @@ Ext.define('Portal.search.FacetDrilldownPanel', { extend: 'Ext.tree.TreePanel',
     _checkSelectedNodes: function(facetNode) {
         var checkedNodes = [];
 
-        facetNode.cascade(function(node) {
+        /*facetNode.cascade(function(node) {
             if (this._isSelected(node)) {
                 node.attributes.checked = true;
                 checkedNodes.push(node);
             }
-        }, this);
+        }, this);*/
 
         return checkedNodes;
     },

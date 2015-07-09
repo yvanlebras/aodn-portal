@@ -33,7 +33,7 @@ Ext.define('Portal.search.SearchPanel', { extend: 'Ext.Panel',
             mapPanel: this.mapPanel
         };
 
-        this.filtersPanel = new Portal.search.SearchFiltersPanel(filtersPanelConfig);
+        //this.filtersPanel = new Portal.search.SearchFiltersPanel(filtersPanelConfig);
 
         this.bodyPanel = new Portal.search.SearchBodyPanel({
             id: 'searchBodypanel',
