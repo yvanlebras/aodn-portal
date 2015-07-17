@@ -11,5 +11,6 @@ var PORTAL_EVENTS = {
     DATA_COLLECTION_REMOVED:       "dataCollectionRemoved",
     VIEW_DATA_COLLECTION:          "viewDataCollection",
     RESET:                         "reset",
-    LOAD_SNAPSHOT:                 "loadSnapshot"
+    LOAD_SNAPSHOT:                 "loadSnapshot",
+    TAB_CHANGED:                   "tabChanged"
 };

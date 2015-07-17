@@ -9,7 +9,7 @@ Ext4.namespace('Portal.cart');
 
 Ext4.define('Portal.cart.BaseInjector', { extend: 'Object',
     constructor: function(config) {
-        Portal.cart.BaseInjector.superclass.constructor.call(this, Ext4.apply(this, config));
+        this.callParent();
     },
 
     getInjectionJson: function(collection) {

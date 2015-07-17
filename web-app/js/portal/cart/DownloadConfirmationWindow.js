@@ -59,7 +59,7 @@ Ext4.define('Portal.cart.DownloadConfirmationWindow', { extend: 'Ext4.Window',
         this.downloadChallengePanel = new Portal.cart.DownloadChallengePanel({});
 
         Ext4.apply(this, {
-            title:OpenLayers.i18n('downloadConfirmationWindowTitle'),
+            title: OpenLayers.i18n('downloadConfirmationWindowTitle'),
             modal: true,
             padding: 15,
             layout: 'fit',

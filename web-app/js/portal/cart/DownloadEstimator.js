@@ -7,7 +7,7 @@
 
 Ext4.namespace('Portal.cart');
 
-Portal.cart.DownloadEstimator = Ext.extend(Object, {
+Ext4.define('Portal.cart.DownloadEstimator', { extend: 'Object',
 
     HALF_GB_IN_BYTES: 536870912,
     EST_FAIL_CODE: -1,
@@ -18,8 +18,7 @@ Portal.cart.DownloadEstimator = Ext.extend(Object, {
             cfg,
             { initTimestampString: new Date().getTime().toString() }
         );
-
-        Portal.cart.DownloadEstimator.superclass.constructor.call(this);
+        this.callParent();
     },
 
     getIdElementName: function(uuid) {

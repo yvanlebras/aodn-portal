@@ -66,6 +66,7 @@ Portal.ui.MainPanel = Ext.extend(Ext.Panel, {
 
     setActiveTab: function(tabIndex) {
         this.layout.setActiveTab(tabIndex);
+        Ext4.MsgBus.publish(PORTAL_EVENTS.TAB_CHANGED, tabIndex);
     },
 
     setDownloadTab: function() {
