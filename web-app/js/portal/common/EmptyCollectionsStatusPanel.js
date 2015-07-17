@@ -7,23 +7,21 @@
 
 Ext4.namespace('Portal.common');
 
-Portal.common.EmptyCollectionStatusPanel = Ext.extend(Ext.Container, {
+Ext4.define('Portal.common.EmptyCollectionStatusPanel', { extend: 'Ext4.Container',
 
     constructor: function(cfg) {
-
         Ext4.apply(this, cfg);
-        Portal.common.EmptyCollectionStatusPanel.superclass.constructor.call(this, arguments);
+        this.callParent();
     },
 
     initComponent: function(cfg) {
-
         var config = Ext4.apply({
             html: this.toString(),
             cls: 'x-panel-header'
         }, cfg);
 
         Ext4.apply(this, config);
-        Portal.common.EmptyCollectionStatusPanel.superclass.initComponent.apply(this, arguments);
+        this.callParent();
     },
 
     toString: function() {

@@ -15,12 +15,7 @@ Ext4.define('Portal.cart.DownloadPanel', { extend: 'Ext4.Container',
         });
         this.initButtonPanel();
 
-        this.emptyMessage = Ext4.create('Ext4.Container', {
-            // TODO ext4 use class EmptyCollectionStatusPanel
-            cls: 'x-panel-header',
-            html: "<div class=\"message\" >" + OpenLayers.i18n('noActiveCollectionSelected') + "<p>" + OpenLayers.i18n('noCollectionSelectedHelp') + "</p></div>",
-            hidden: true
-        });
+        this.emptyMessage = Ext4.create('Portal.common.EmptyCollectionStatusPanel');
 
         var config = Ext4.apply({
             autoScroll: true,

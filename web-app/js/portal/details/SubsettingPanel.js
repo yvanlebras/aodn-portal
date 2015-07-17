@@ -18,9 +18,7 @@ Portal.details.SubsettingPanel = Ext.extend(Ext.Panel, {
 
         this.subsetPanelAccordion = new Portal.details.SubsetPanelAccordion();
 
-        this.emptyTextPanel =  new Portal.common.EmptyCollectionStatusPanel({
-            hidden: true
-        });
+        this.emptyTextPanel = Ext4.createWrapped('Portal.common.EmptyCollectionStatusPanel', {});
 
         var config = Ext4.apply({
             autoScroll: true,
