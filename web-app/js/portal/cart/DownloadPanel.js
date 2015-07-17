@@ -70,7 +70,6 @@ Ext4.define('Portal.cart.DownloadPanel', { extend: 'Ext4.Container',
     _registerEvents: function() {
         Ext4.MsgBus.subscribe(PORTAL_EVENTS.TAB_CHANGED, function() { this.generateContent() }, this);
         Ext4.MsgBus.subscribe(PORTAL_EVENTS.DATA_COLLECTION_ADDED, function() { this.generateContent() }, this);
-        Ext4.MsgBus.subscribe(PORTAL_EVENTS.DATA_COLLECTION_MODIFIED, function() { this.generateContent() }, this);
         Ext4.MsgBus.subscribe(PORTAL_EVENTS.DATA_COLLECTION_REMOVED, function() { this.generateContent() }, this);
     },
 
