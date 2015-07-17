@@ -27,6 +27,11 @@ Ext4.define('Portal.cart.DownloadPanel', { extend: 'Ext4.Container',
                 cls: 'downloadPanelBody'
             },
             items: [
+                { // TODO ext4 remove once DownloadPanel is Ext4.Panel again
+                    xtype: 'label',
+                    html: OpenLayers.i18n('stepHeader', { stepNumber: 3, stepDescription: OpenLayers.i18n('step3Description')}) ,
+                    cls: 'steps'
+                },
                 { xtype: 'tbspacer', height: 10 },
                 this.buttonPanel,
                 { xtype: 'tbspacer', height: 10 },
@@ -63,7 +68,7 @@ Ext4.define('Portal.cart.DownloadPanel', { extend: 'Ext4.Container',
     },
 
     _registerEvents: function() {
-        this.on('beforeshow', function() { this.generateContent() }, this);
+        Ext4.MsgBus.subscribe(PORTAL_EVENTS.TAB_CHANGED, function() { this.generateContent() }, this);
         Ext4.MsgBus.subscribe(PORTAL_EVENTS.DATA_COLLECTION_ADDED, function() { this.generateContent() }, this);
         Ext4.MsgBus.subscribe(PORTAL_EVENTS.DATA_COLLECTION_MODIFIED, function() { this.generateContent() }, this);
         Ext4.MsgBus.subscribe(PORTAL_EVENTS.DATA_COLLECTION_REMOVED, function() { this.generateContent() }, this);
@@ -89,7 +94,7 @@ Ext4.define('Portal.cart.DownloadPanel', { extend: 'Ext4.Container',
     },
 
     generateContent: function() {
-        if (this.rendered) {
+        if (this.rendered && viewport.isOnTab(TAB_INDEX_DOWNLOAD)) {
             this.generateBodyContent();
         }
     },
