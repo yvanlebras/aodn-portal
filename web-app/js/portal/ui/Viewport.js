@@ -33,7 +33,7 @@ Portal.ui.Viewport = Ext.extend(Ext.Viewport, {
                 new Portal.ui.VisualisePanel({
                     mapPanel: mapPanel
                 }),
-                new Portal.cart.DownloadPanel()
+                Ext4.createWrapped('Portal.cart.DownloadPanel', {})
             ]
         });
 

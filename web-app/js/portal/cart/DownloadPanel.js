@@ -6,17 +6,19 @@
  */
 Ext4.namespace('Portal.cart');
 
-Portal.cart.DownloadPanel = Ext.extend(Ext.Panel, {
+Ext4.define('Portal.cart.DownloadPanel', { extend: 'Ext4.Container',
 
     initComponent: function(cfg) {
-
-        this.bodyContent = new Ext.Panel({
+        this.bodyContent = Ext4.create('Ext4.Container', {
             cls: 'downloadPanelItem',
             width: 1024
         });
         this.initButtonPanel();
 
-        this.emptyMessage = new Portal.common.EmptyCollectionStatusPanel({
+        this.emptyMessage = Ext4.create('Ext4.Container', {
+            // TODO ext4 use class EmptyCollectionStatusPanel
+            cls: 'x-panel-header',
+            html: "<div class=\"message\" >" + OpenLayers.i18n('noActiveCollectionSelected') + "<p>" + OpenLayers.i18n('noCollectionSelectedHelp') + "</p></div>",
             hidden: true
         });
 
@@ -30,19 +32,19 @@ Portal.cart.DownloadPanel = Ext.extend(Ext.Panel, {
                 cls: 'downloadPanelBody'
             },
             items: [
-                new Ext.Spacer({height: 10}),
+                { xtype: 'tbspacer', height: 10 },
                 this.buttonPanel,
-                new Ext.Spacer({height: 10}),
+                { xtype: 'tbspacer', height: 10 },
                 this.emptyMessage,
                 this.bodyContent
             ]
         }, cfg);
 
         this.store = Portal.data.ActiveGeoNetworkRecordStore.instance();
-        this.confirmationWindow = new Portal.cart.DownloadConfirmationWindow();
+        this.confirmationWindow = Ext4.create('Portal.cart.DownloadConfirmationWindow');
 
         Ext4.apply(this, config);
-        Portal.cart.DownloadPanel.superclass.initComponent.call(this, arguments);
+        this.callParent();
 
         this.downloader = this._initDownloader();
         this._registerEvents();
@@ -83,7 +85,7 @@ Portal.cart.DownloadPanel = Ext.extend(Ext.Panel, {
     },
 
     onDownloadFailed: function(downloadUrl, collection, msg) {
-        Ext.Msg.alert(
+        Ext4.Msg.alert(
             OpenLayers.i18n('errorDialogTitle'),
             OpenLayers.i18n('downloadErrorText')
         );
@@ -107,10 +109,9 @@ Portal.cart.DownloadPanel = Ext.extend(Ext.Panel, {
             html += this._generateBodyContentForCollection(tpl, collection, html);
         }, this);
 
-        if (!html) {
-            html = "";
-            this.emptyMessage.show();
+        if ("" == html) {
             this.buttonPanel.hide();
+            this.emptyMessage.show();
         }
         else {
             this.emptyMessage.hide();
@@ -134,20 +135,17 @@ Portal.cart.DownloadPanel = Ext.extend(Ext.Panel, {
     },
 
     initButtonPanel: function () {
-
-         this.resetLink = new Ext.ux.Hyperlink({
-            text: OpenLayers.i18n("clearLinkLabel", {text: OpenLayers.i18n('clearAndResetLabel')}) ,
+        this.resetAllButton = Ext4.create('Ext4.Button', {
+            text: OpenLayers.i18n("clearLinkLabel", {text: OpenLayers.i18n('clearAndResetLabel')}),
             tooltip: OpenLayers.i18n("clearAllButtonTooltip"),
-            cls: "clearFiltersLink buttonPad"
+            cls: "clearFiltersLink buttonPad",
+            handler: this._clearAllAndReset
         });
-        this.resetLink.on('click', function() {
-            this._clearAllAndReset();
-        }, this);
 
-        this.buttonPanel = new Ext.Panel({
+        this.buttonPanel = new Ext4.Panel({
             cls: 'downloadPanelItem',
             width: 1024,
-            items: [this.resetLink]
+            items: [ this.resetAllButton ]
         });
     },
 

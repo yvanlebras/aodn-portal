@@ -7,12 +7,12 @@
 
 Ext4.namespace('Portal.cart');
 
-Portal.cart.DownloadConfirmationWindow = Ext.extend(Ext.Window, {
+Ext4.define('Portal.cart.DownloadConfirmationWindow', { extend: 'Ext4.Window',
 
     initComponent: function() {
 
         // Content
-        var contentPanel = new Ext.Panel({
+        var contentPanel = Ext4.create('Ext4.Panel', {
             html: OpenLayers.i18n(
                 'downloadConfirmationWindowContent', {
                     downloadDatasetHelpUrl: Portal.app.appConfig.help.downloadDatasetUrl,
@@ -24,7 +24,7 @@ Portal.cart.DownloadConfirmationWindow = Ext.extend(Ext.Window, {
         });
 
         // Controls
-        this.downloadButton = new Ext.Button({
+        this.downloadButton = Ext4.create('Ext4.Button', {
             text: OpenLayers.i18n('downloadConfirmationDownloadText'),
             listeners: {
                 scope: this,
@@ -32,7 +32,7 @@ Portal.cart.DownloadConfirmationWindow = Ext.extend(Ext.Window, {
             }
         });
 
-        var cancelButton = new Ext.Button({
+        var cancelButton = Ext4.create('Ext4.Button', {
             text: OpenLayers.i18n('downloadConfirmationCancelText'),
             listeners: {
                 scope: this,
@@ -71,17 +71,10 @@ Portal.cart.DownloadConfirmationWindow = Ext.extend(Ext.Window, {
                 items: [
                     this.downloadEmailPanel,
                     this.downloadChallengePanel,
-                    {xtype: 'spacer', height: 20},
+                    { xtype: 'tbspacer', height: 20 },
                     contentPanel
                 ],
-                buttons: [this.downloadButton, cancelButton],
-                keys: [
-                    {
-                        key: [Ext.EventObject.ESCAPE],
-                        handler: this.onCancel,
-                        scope: this
-                    }
-                ]
+                buttons: [this.downloadButton, cancelButton]
             },
             listeners: {
                 show: this.onShow,
@@ -89,23 +82,7 @@ Portal.cart.DownloadConfirmationWindow = Ext.extend(Ext.Window, {
             }
         });
 
-        Portal.cart.DownloadConfirmationWindow.superclass.initComponent.apply(this, arguments);
-    },
-
-    hide: function() {
-        try {
-            Portal.cart.DownloadConfirmationWindow.superclass.hide.call(this);
-        }
-        catch (e) {
-            /**
-             * Explicitly ignoring exception
-             *
-             * https://github.com/aodn/aodn-portal/issues/486
-             *
-             * Same bugfix as for #175:
-             * https://github.com/aodn/aodn-portal/issues/175
-             */
-        }
+        this.callParent();
     },
 
     show: function(params) {

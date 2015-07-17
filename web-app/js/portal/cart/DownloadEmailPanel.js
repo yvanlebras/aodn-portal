@@ -6,18 +6,18 @@
  */
 Ext4.namespace('Portal.cart');
 
-Portal.cart.DownloadEmailPanel = Ext.extend(Ext.Panel, {
+Ext4.define('Portal.cart.DownloadEmailPanel', { extend: 'Ext4.Panel',
 
     initComponent: function() {
 
         var emailVal = "";
         var EMPTY_EXT3_3_0_COOKIE_STRING = "undefined";
 
-        if (Ext.util.Cookies.get('emailField') && Ext.util.Cookies.get('emailField') != EMPTY_EXT3_3_0_COOKIE_STRING) {
-            emailVal = Ext.util.Cookies.get('emailField');
+        if (Ext4.util.Cookies.get('emailField') && Ext4.util.Cookies.get('emailField') != EMPTY_EXT3_3_0_COOKIE_STRING) {
+            emailVal = Ext4.util.Cookies.get('emailField');
         }
 
-        this.emailField = new Ext.form.TextField({
+        this.emailField = Ext4.create('Ext4.form.TextField', {
             name: "emailField",
             value: emailVal,
             emptyText: OpenLayers.i18n('emailAddressPlaceholder'),
@@ -31,9 +31,9 @@ Portal.cart.DownloadEmailPanel = Ext.extend(Ext.Panel, {
             padding: 10,
             cls: 'downloadEmailPanel',
             items: [
-                {xtype: 'spacer', height: 5},
+                { xtype: 'tbspacer', height: 5 },
                 this.emailField,
-                {xtype: 'spacer', height: 5},
+                { xtype: 'tbspacer', height: 5 },
                 {
                     html: OpenLayers.i18n('notificationBlurbMessage')
                 }
@@ -50,12 +50,12 @@ Portal.cart.DownloadEmailPanel = Ext.extend(Ext.Panel, {
 
         Ext4.apply(this, config);
 
-        Portal.cart.DownloadEmailPanel.superclass.initComponent.call(this, arguments);
+        this.callParent();
     },
 
     getEmailValue: function() {
         var emailValue = this.emailField.getValue();
-        Ext.util.Cookies.set('emailField', emailValue, new Date().add(Date.DAY, 90));
+        Ext4.util.Cookies.set('emailField', emailValue, new Date().add(Date.DAY, 90));
         return emailValue;
     },
 

@@ -6,13 +6,11 @@
  */
 Ext4.namespace('Portal.cart');
 
-Portal.cart.DownloadPanelItemTemplate = Ext.extend(Ext.XTemplate, {
+Ext4.define('Portal.cart.DownloadPanelItemTemplate', { extend: 'Ext4.XTemplate',
 
     constructor: function(cfg) {
-
         var templateLines = this._getHtmlContent();
-
-        Portal.cart.DownloadPanelItemTemplate.superclass.constructor.call(this, templateLines);
+        this.callParent(templateLines);
     },
 
     _getHtmlContent: function() {
@@ -101,9 +99,9 @@ Portal.cart.DownloadPanelItemTemplate = Ext.extend(Ext.XTemplate, {
     _createDownloadingLabel: function(collection) {
         var elementId = this._getButtonId(collection, 'downloadButtonId');
 
-        Ext.fly(elementId).update("");
+        Ext4.fly(elementId).update("");
 
-        new Ext.Button({
+        new Ext4.Button({
             text: "<span class=\"fa fa-spin fa-spinner \"></span> " + OpenLayers.i18n('downloadStatusRequested'),
             cls: 'navigationButton navigationButtonActive',
             scope: this,
@@ -117,17 +115,17 @@ Portal.cart.DownloadPanelItemTemplate = Ext.extend(Ext.XTemplate, {
 
         var elementId = this._getButtonId(collection, 'downloadButtonId');
 
-        if (collection.menuItems.length > 0 && Ext.get(elementId)) {
+        if (collection.menuItems.length > 0 && Ext4.get(elementId)) {
 
             // clear old button
-            Ext.fly(elementId).update("");
+            Ext4.fly(elementId).update("");
 
-            new Ext.Button({
+            new Ext4.Button({
                 text: OpenLayers.i18n('downloadButtonLabel'),
                 cls: 'navigationButton',
                 scope: this,
                 renderTo: elementId,
-                menu: new Ext.menu.Menu({
+                menu: new Ext4.menu.Menu({
                     items: collection.menuItems
                 })
             });
@@ -141,12 +139,12 @@ Portal.cart.DownloadPanelItemTemplate = Ext.extend(Ext.XTemplate, {
 
     _createRemoveButton: function(collection) {
         var elementId = this._getButtonId(collection, 'removeButtonId');
-        if (collection.menuItems.length > 0 && Ext.get(elementId)) {
+        if (collection.menuItems.length > 0 && Ext4.get(elementId)) {
 
             // remove old button
-            Ext.fly(elementId).update("");
+            Ext4.fly(elementId).update("");
 
-            new Ext.Button({
+            new Ext4.Button({
                 text: OpenLayers.i18n("removeButton"),
                 tooltip: OpenLayers.i18n("removeButtonTooltip"),
                 width: 65,

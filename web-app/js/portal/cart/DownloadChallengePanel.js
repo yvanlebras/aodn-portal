@@ -6,13 +6,13 @@
  */
 Ext4.namespace('Portal.cart');
 
-Portal.cart.DownloadChallengePanel = Ext.extend(Ext.Panel, {
+Ext4.define('Portal.cart.DownloadChallengePanel', { extend: 'Ext4.Panel',
 
     challenged: false,
 
     initComponent: function() {
 
-        this.challengeResponseField = new Ext.form.TextField({
+        this.challengeResponseField = Ext4.create('Ext4.form.TextField', {
             name: "challengeResponseField",
             width: 250
         });
@@ -21,7 +21,7 @@ Portal.cart.DownloadChallengePanel = Ext.extend(Ext.Panel, {
             padding: 10,
             cls: 'downloadChallengePanel',
             items: [
-                {xtype: 'spacer', height: 5},
+                { xtype: 'tbspacer', height: 5 },
                 {
                     html: "<div id='challenge'></div>"
                 },
@@ -29,7 +29,7 @@ Portal.cart.DownloadChallengePanel = Ext.extend(Ext.Panel, {
                     xtype: 'label',
                     text: OpenLayers.i18n('challengeInstructions')
                 },
-                {xtype: 'spacer', height: 5},
+                { xtype: 'tbspacer', height: 5 },
                 this.challengeResponseField
             ],
             listeners: {
@@ -42,7 +42,7 @@ Portal.cart.DownloadChallengePanel = Ext.extend(Ext.Panel, {
 
         Ext4.apply(this, config);
 
-        Portal.cart.DownloadChallengePanel.superclass.initComponent.call(this, arguments);
+        this.callParent();
 
         this._hideChallenge();
     },

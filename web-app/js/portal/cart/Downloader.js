@@ -7,14 +7,14 @@
 
 Ext4.namespace('Portal.cart');
 
-Portal.cart.Downloader = Ext.extend(Ext.util.Observable, {
+Ext4.define('Portal.cart.Downloader', { extend: 'Ext4.util.Observable',
 
     constructor: function(config) {
         this.addEvents('downloadrequested', 'downloadstarted', 'downloadfailed');
 
         Ext4.apply(this, config);
 
-        Portal.cart.Downloader.superclass.constructor.call(this, config);
+        this.callParent();
     },
 
     download: function(collection, generateUrlCallbackScope, generateUrlCallback, params) {
@@ -114,7 +114,7 @@ Portal.cart.Downloader = Ext.extend(Ext.util.Observable, {
     },
 
     _onAsyncDownloadRequestSuccess: function(response, params) {
-        Ext.Msg.alert(
+        Ext4.Msg.alert(
             OpenLayers.i18n('asyncDownloadPanelTitle'),
             OpenLayers.i18n('asyncDownloadSuccessMsg', {
                 email: params.emailAddress,
@@ -128,7 +128,7 @@ Portal.cart.Downloader = Ext.extend(Ext.util.Observable, {
     },
 
     _onAsyncDownloadRequestFailure: function() {
-        Ext.Msg.alert(
+        Ext4.Msg.alert(
             OpenLayers.i18n('asyncDownloadPanelTitle'),
             OpenLayers.i18n('asyncDownloadErrorMsg')
         );
