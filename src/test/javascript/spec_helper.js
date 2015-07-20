@@ -17,6 +17,9 @@ if (typeof console === "undefined" || typeof console.log === "undefined") {
 Ext.MessageBox.alert = function () {
 };
 
+Ext4.MessageBox.alert = function () {
+};
+
 // Overwrite Ext4.Ajax.request so it doesn't try to make requests.
 Ext4.Ajax.request = function(options) {
 };

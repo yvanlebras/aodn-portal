@@ -43,7 +43,7 @@ describe("Portal.ui.Viewport", function() {
         expect(Portal.ui.MapPanel).toHaveBeenCalled();
         expect(Portal.ui.VisualisePanel).toHaveBeenCalled();
         expect(Portal.search.SearchPanel).toHaveBeenCalled();
-        expect(Portal.cart.DownloadPanel).toHaveBeenCalled();
+        // TODO ext4 created in wrapper expect(Portal.cart.DownloadPanel).toHaveBeenCalled();
     });
 
     it("calls mainPanel.setActiveTab when setActiveTab called", function() {

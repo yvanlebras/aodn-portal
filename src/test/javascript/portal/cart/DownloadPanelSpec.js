@@ -21,7 +21,7 @@ describe("Portal.cart.DownloadPanel", function() {
 
     describe('event handlers', function() {
         it('listens for beforeshow event', function() {
-            downloadPanel.fireEvent('beforeshow');
+            Ext4.MsgBus.publish(PORTAL_EVENTS.TAB_CHANGED, TAB_INDEX_DOWNLOAD);
 
             expect(downloadPanel.generateContent).toHaveBeenCalled();
         });

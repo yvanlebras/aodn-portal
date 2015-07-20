@@ -17,14 +17,14 @@ Ext4.define('Portal.cart.DownloadEmailPanel', { extend: 'Ext4.Panel',
             emailVal = Ext4.util.Cookies.get('emailField');
         }
 
-        this.emailField = Ext4.create('Ext4.form.TextField', {
+        this.emailField = Ext4.create('Ext4.form.field.Text', {
             name: "emailField",
             value: emailVal,
             emptyText: OpenLayers.i18n('emailAddressPlaceholder'),
             invalidText: OpenLayers.i18n('emailAddressValidationError'),
             width: 250,
             validator: this._validateEmailAddress,
-            bubbleEvents: [ 'valid', 'invalid' ]
+            bubbleEvents: [ 'validitychange' ]
         });
 
         var config = {
@@ -37,15 +37,7 @@ Ext4.define('Portal.cart.DownloadEmailPanel', { extend: 'Ext4.Panel',
                 {
                     html: OpenLayers.i18n('notificationBlurbMessage')
                 }
-            ],
-            listeners: {
-                scope: this,
-                'show': function() {
-                    this.emailField.focus();
-                    var the = this;
-                    setTimeout(function() { the.emailField.validate(); }, 200 );
-                }
-            }
+            ]
         };
 
         Ext4.apply(this, config);

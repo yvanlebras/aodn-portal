@@ -135,16 +135,16 @@ describe('Portal.cart.DownloadPanelItemTemplate', function () {
     describe('create download button', function() {
 
         beforeEach(function() {
-            spyOn(Ext, 'get').andReturn({});
-            spyOn(Ext, 'fly').andReturn({update: noOp});
-            spyOn(Ext.menu, 'Menu');
-            spyOn(Ext, 'Button');
+            spyOn(Ext4, 'get').andReturn({});
+            spyOn(Ext4, 'fly').andReturn({update: noOp});
+            spyOn(Ext4.menu, 'Menu');
+            spyOn(Ext4, 'Button');
         });
 
         it('should not create a button if the array is empty', function() {
 
             tpl._createDownloadButton(mockDataInjection);
-            expect(Ext.Button).not.toHaveBeenCalled();
+            expect(Ext4.Button).not.toHaveBeenCalled();
         });
 
         it('should create a download button if necessary', function() {
@@ -152,7 +152,7 @@ describe('Portal.cart.DownloadPanelItemTemplate', function () {
             mockDataInjection.menuItems = ['menu item 1'];
 
             tpl._createDownloadButton(mockDataInjection);
-            expect(Ext.Button).toHaveBeenCalled();
+            expect(Ext4.Button).toHaveBeenCalled();
         });
     });
 
@@ -196,11 +196,11 @@ describe('Portal.cart.DownloadPanelItemTemplate', function () {
 
     describe('_createDownloadingLabel', function() {
         it('creates disabled button with msg', function() {
-            spyOn(Ext, 'Button');
-            spyOn(Ext, 'fly').andReturn({update: noOp});
+            spyOn(Ext4, 'Button');
+            spyOn(Ext4, 'fly').andReturn({update: noOp});
 
             tpl._createDownloadingLabel(mockDataInjection);
-            expect(Ext.Button).toHaveBeenCalled();
+            expect(Ext4.Button).toHaveBeenCalled();
         });
     });
 

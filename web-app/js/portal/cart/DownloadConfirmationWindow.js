@@ -43,13 +43,11 @@ Ext4.define('Portal.cart.DownloadConfirmationWindow', { extend: 'Ext4.Window',
         this.downloadEmailPanel = new Portal.cart.DownloadEmailPanel({
             listeners: {
                 scope: this,
-                'valid': function() {
-                    if (this.downloadEmailPanel.isVisible()) {
+                'validitychange': function(component, isValid) {
+                    if (isValid) {
                         this.downloadButton.enable()
                     }
-                },
-                'invalid': function() {
-                    if (this.downloadEmailPanel.isVisible()) {
+                    else {
                         this.downloadButton.disable()
                     }
                 }

@@ -33,18 +33,6 @@ describe("Portal.cart.DownloadEmailPanel", function() {
             expect(panel.emailField.validator).toBe(panel._validateEmailAddress);
         });
 
-        describe('listeners', function() {
-            it('calls onValid', function() {
-                panel.emailField.fireEvent('valid', panel.emailField);
-                expect(onValidSpy).toHaveBeenCalled();
-            });
-
-            it('calls onInvalid', function() {
-                panel.emailField.fireEvent('invalid', panel.emailField);
-                expect(onInvalidSpy).toHaveBeenCalled();
-            });
-        });
-
         describe('_validateEmailAddress', function () {
 
             it('returns false for an empty address', function () {

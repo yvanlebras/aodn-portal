@@ -44,7 +44,7 @@ Ext4.define('Portal.cart.DownloadPanel', { extend: 'Ext4.Container',
         this.confirmationWindow = Ext4.create('Portal.cart.DownloadConfirmationWindow');
 
         Ext4.apply(this, config);
-        this.callParent();
+        this.callParent(arguments);
 
         this.downloader = this._initDownloader();
         this._registerEvents();
