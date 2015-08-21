@@ -166,15 +166,27 @@ Portal.cart.DownloadPanel = Ext.extend(Ext.Panel, {
     },
 
     _getMenuItem: function (handler, downloadOption, collection) {
+        var menuItemText = OpenLayers.i18n(downloadOption.textKey);
+        var menuItemId = String.format(
+            "downloadMenuItem-{0}-{1}",
+            collection.getUuid(),
+            menuItemText.replace(/ /g, '_')
+        );
+
         return {
+            id: menuItemId,
             name: handler.onlineResource.name,
             title: handler.onlineResource.title,
-            text: OpenLayers.i18n(downloadOption.textKey),
+            html: String.format(
+                "{0}<a style='display: none;' href='{1}' />",  // this is instrumentation for geb
+                menuItemText,
+                this._constructDownloadUrl(collection, downloadOption)
+            ),
             handler: function() {
                 this.confirmDownload(collection, this, downloadOption.handler, downloadOption.handlerParams, downloadOption.textKey);
             },
             scope: this
-        }
+        };
     },
 
     _loadMenuItemsFromHandlers: function(processedValues, collection) {
@@ -212,7 +224,6 @@ Portal.cart.DownloadPanel = Ext.extend(Ext.Panel, {
                 }
 
                 downloadOptionTextKeysUsed.push(newMenuItem.text);
-
             }, this);
         }, this);
 
@@ -231,6 +242,17 @@ Portal.cart.DownloadPanel = Ext.extend(Ext.Panel, {
         var regexBracketContents = /\(([^)]+)\)/;
         var regexRes = regexBracketContents.exec(title);
         return (regexRes && regexRes[1].length > 0) ? regexRes[1].toTitleCase() : false;
+    },
+
+    _constructDownloadUrl: function(collection, downloadOption) {
+        var downloadUrl = downloadOption.handler.call(this, collection, downloadOption.handlerParams);
+        var downloadToken = this.downloader._newDownloadToken();
+        return this.downloader._constructProxyUrl(
+            collection,
+            downloadUrl,
+            downloadToken,
+            downloadOption.handlerParams
+        );
     },
 
     confirmDownload: function(collection, generateUrlCallbackScope, generateUrlCallback, params, textKey) {

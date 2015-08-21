@@ -28,6 +28,9 @@ grails.project.dependency.resolution = {
         mavenRepo "https://repo.grails.org/grails/plugins"
     }
     dependencies {
+        test("org.seleniumhq.selenium:selenium-firefox-driver:2.45.0")
+        test "org.gebish:geb-spock:0.12.2"
+
         compile('org.codehaus.groovy.modules.http-builder:http-builder:0.7') {
             excludes "commons-logging", "xml-apis", "groovy"
         }
@@ -39,10 +42,14 @@ grails.project.dependency.resolution = {
     plugins {
         compile ":joda-time:1.5"
         compile ":mail:1.0.7"
+        compile(":functional-test-development:0.9.4") {
+            excludes "hibernate"
+        }
         compile ":simple-captcha:1.0.0"
         test ":code-coverage:1.2.4"
         compile ":csv:0.3.1"
         build ":tomcat:7.0.54"
+        test ":geb:0.12.2"
     }
 }
 
