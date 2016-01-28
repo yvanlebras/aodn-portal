@@ -275,7 +275,8 @@ portal {
         dataFile = [
             "WWW:DOWNLOAD-1.0-http--download",
             "WWW:DOWNLOAD-1.0-http--downloadother",
-            "WWW:DOWNLOAD-1.0-http--downloaddata"
+            "WWW:DOWNLOAD-1.0-http--downloaddata",
+            "WWW:LINK-1.0-http--downloaddata"
         ]
 
         supplementary = [
