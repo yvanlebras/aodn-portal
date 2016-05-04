@@ -135,14 +135,18 @@ environments {
 
         // URLs
         def localhostAddress = java.net.InetAddress.getLocalHost().getHostAddress()
-        grails.serverURL = "http://${localhostAddress}:8080/$appName"
+        grails.serverURL = "http://${localhostAddress}:9090/$appName"
         gogoduck.url = "http://${localhostAddress}:8300/go-go-duck"
-        geonetwork.url = "https://catalogue-123.aodn.org.au/geonetwork"
+        geonetwork.url = "https://catalogue-portal.aodn.org.au/geonetwork"
 
         // Set to true if you want to test interaction with new servers. This turns
         // your portal instance into an open proxy and can be dangerous.
         allowAnyHost = true
+
+
         portal {
+            siteHeader = "Open Access to Ocean Data"
+            logo = "images/AODN/AODN_logo_fullText.png"
             secondaryLogo = "https://static.emii.org.au/images/logo/IMOS_logo-stacked3.png"
             icon = "https://static.emii.org.au/images/aodn/favicon.ico"
         }
@@ -231,10 +235,10 @@ baselayers = [
 ]
 
 portal {
-    siteHeader = "Australian Ocean Data Network"
+    siteHeader = "[not configured]"
     motdUrl = "https://static.emii.org.au/motd"
 
-    logo = "images/IMOS_logo.png"
+    logo = "images/favicon.ico"
     header {
         externalLinks = [
             [
@@ -251,7 +255,8 @@ portal {
         <a title="Data usage acknowledgement" target="_blank" class="external" href="${help.url}/help/?q=node/81">Acknowledgement</a> <b>|</b>
         <a title="Disclaimer information" target="_blank" class="external" href="${help.url}/help/?q=node/80">Disclaimer</a> <b>|</b>
         <a title="Integrated Marine Observing System" target="_blank" class="external" href="http://www.imos.org.au">IMOS</a> <b>|</b>
-        <a title="Australian Ocean Data Network" target="_blank" class="external" href="http://imos.org.au/aodn.html">AODN</a>
+        <a title="Australian Ocean Data Network" target="_blank" class="external" href="http://imos.org.au/aodn.html">AODN</a><b>|</b>
+        <a title="AODN Portal User Guide" target="_blank" class="external" href="https://aodnsite.wordpress.com/">Contributing</a>
         """
 
     initialBbox = "110,-50,160,-3"

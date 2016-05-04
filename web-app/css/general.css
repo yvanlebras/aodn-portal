@@ -134,33 +134,19 @@ hr {
 }
 
 #logoContainer,
-#secondaryLogoContainer {
-    position: absolute;
-}
-
-.landingContainer {
-    width: 950px;
-    padding-top: 12px;
-}
-
-#landingLeft {
+#headerContainer {
     float: left;
 }
 
-#headerContainer {
-    margin-left: 340px;
+#secondaryLogoContainer {
+    top: 40px;
+    right: 20px;
+    position: absolute;
 }
 
 .bigtext {
     font-size: 18px;
     margin: 10px 0;
-}
-
-#landingCentre {
-    float: right;
-    width: 620px;
-    padding: 30px 0;
-    margin-bottom: 70px;
 }
 
 #toplinks {
