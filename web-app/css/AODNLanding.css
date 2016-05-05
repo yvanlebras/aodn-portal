@@ -11,7 +11,8 @@ body:after {
 }
 
 a {
-    color: #c58900;
+    color: #414141;
+    font-weight: bold;;
 }
 
 td, p, button {
@@ -48,7 +49,7 @@ img {
 }
 
 .headerHeightOverlord {
-    height: 150px;
+    height: 140px;
 }
 
 
@@ -64,23 +65,37 @@ img {
     -o-background-size: cover;
     background-size: cover;
     display: table;
-    height: 60%;
+    height: 65%;
     min-height: 360px;
     width: 100%;
     color: whitesmoke;
 }
 
-.btn-primary {
+#home .btn-primary {
     background-color: #E38D1F;
-    border: 0 solid white;
+    border: 2px solid white;
     font-weight: 700;
-    text-shadow: 0 1px 0 rgba(205, 205, 205, 0.5);
 }
 
 #home .btn-primary:hover {
     background-color: #E7AC5F;
-    color: black;
+    color: #fefefe;
+    border: 2px solid white;
 }
+
+/* bootsrap v4Alpha */
+.btn-secondary {
+    background-color: #fff;
+    border-color: #ccc;
+    color: #373a3c;
+}
+
+.btn-secondary:hover {
+    background-color: #e6e6e6;
+    border-color: #adadad;
+}
+
+
 
 #toplinks {
     display:none;
@@ -88,7 +103,7 @@ img {
 
 #home .homeContent p {
     font-family: inherit;
-    font-size: 1.5em;
+    font-size: 1.9em;
     margin: 10px 0 20px 0;
     text-shadow: 1px 1px 16px rgba(6,73,108, 0.62);
 }
@@ -97,7 +112,7 @@ img {
     font-family: impact, sans-serif;
     text-shadow: 1px 1px 16px rgba(6,73,108, 0.62);
     font-weight: 700;
-    font-size: 5em;
+    font-size: 6em;
     margin: 0;
     padding: 0;
 }
@@ -111,25 +126,27 @@ a:focus {
     display: table;
     width: 100%;
     box-shadow: inset 5px 5px 5px 3px rgba(0, 0,0, 0.1);
-}
-
-.information-panel {
     padding-top: 30px;
     padding-bottom: 50px;
 }
-.information-panel img {
+
+#information img {
     padding-bottom: 10px;
 }
 
-
+@media (min-width: 1000px) {
+    .container{
+        max-width: 800px;
+    }
+}
 
 @media (max-width: 800px) {
 
-    .homeContent h1 {
+    #home .homeContent h1 {
         font-size: 4em;
     }
 
-    .homeContent p {
+    #home .homeContent p {
         font-size: 1.2em;
     }
 }
@@ -166,6 +183,3 @@ a:focus {
     border-left: 1px solid #9daab1;
 }
 
-#viewPortLinks {
-    height: 40px;
-}

@@ -82,53 +82,51 @@
 
 <a name="information"></a>
 <section id="information" data-uitype="fade">
-    <div class="information-panel">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="panel-body lead">
-                        <img src="https://static.emii.org.au/images/logo/NCRIS_Initiative_stacked200.png" alt="NCRIS logo" />
-                        <a href="http://www.utas.edu.au/" title="UTAS home page" target="_blank"><img src="https://static.emii.org.au/images/logo/utas/UTAS_MONO_190w.png" alt="UTAS logo" />
-                        </a>
-                        <br />
-                        <a class="noUnderline" href="http://twitter.com/AusOceanDataNet" target="_blank">
-                            <img src="${resource(
-                                dir: 'images', file: 'Twitter_logo_black.png'
-                            )}" title="Follow us on twitter" alt="Follow us on twitter" />
-                        </a>
-                        <a class="noUnderline" href="http://www.facebook.com/AusOceanDataNet" target="_blank">
-                            <img src="${resource(
-                                dir: 'images', file: 'FB-logo-gray.png'
-                            )}" title="Find us on Facebook" alt="Find us on Facebook" />
-                        </a>
-                    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <div class="panel-body lead">
+                    <img src="https://static.emii.org.au/images/logo/NCRIS_Initiative_stacked200.png" alt="NCRIS logo" />
+                    <a href="http://www.utas.edu.au/" title="UTAS home page" target="_blank"><img src="https://static.emii.org.au/images/logo/utas/UTAS_MONO_190w.png" alt="UTAS logo" />
+                    </a>
+                    <br />
+                    <a class="noUnderline" href="http://twitter.com/AusOceanDataNet" target="_blank">
+                        <img src="${resource(
+                            dir: 'images', file: 'Twitter_logo_black.png'
+                        )}" title="Follow us on twitter" alt="Follow us on twitter" />
+                    </a>
+                    <a class="noUnderline" href="http://www.facebook.com/AusOceanDataNet" target="_blank">
+                        <img src="${resource(
+                            dir: 'images', file: 'FB-logo-gray.png'
+                        )}" title="Find us on Facebook" alt="Find us on Facebook" />
+                    </a>
                 </div>
+            </div>
 
-                <div class="col-sm-3">
-                    <div class="panel-body lead">
-                        <a href="http://oceancurrent.imos.org.au/" class="btn btn-info">IMOS OceanCurrent</a>
-                        <p></p>
-                        <p><strong>The latest information round Australia</strong></p>
-                    </div>
+            <div class="col-md-4 text-center">
+                <div class="panel-body lead">
+                    <a href="http://oceancurrent.imos.org.au/" class="btn btn-secondary btn-lg">IMOS OceanCurrent</a>
+                    <p></p>
+                    <p><strong>The latest information round Australia</strong></p>
                 </div>
+            </div>
 
-                <div class="col-sm-5">
-                    <div class="">
-                        <div class="panel-body lead">
-                            <p>
-                                The <a target="_blank" class="external" title="AODN Ocean Data Portal" href="http://portal.aodn.org.au/aodn">AODN Ocean Data Portal</a> has access to all available marine and climate science data and provides the primary access to IMOS data including access to the complete IMOS metadata catalog.
-                            </p>
+            <div class="col-md-4 text-left">
+                <div class="footerText">
+                    <div class="panel-body lead">
+                        <p>
+                            The <a target="_blank" class="external" title="AODN Ocean Data Portal" href="http://portal.aodn.org.au/aodn">AODN Ocean Data Portal</a> has access to all available marine and climate science data and provides the primary access to IMOS data including access to the complete IMOS metadata catalog.
+                        </p>
 
-                            <p>
-                                IMOS is a national collaborative research infrastructure, supported by
-                                Australian Government. It is led by <a target="_blank" title="UTAS home page" href="http://www.utas.edu.au/">University of Tasmania</a> in partnership
-                            with the Australian marine & climate science community.
-                            </p>
+                        <p>
+                            IMOS is a national collaborative research infrastructure, supported by
+                            Australian Government. It is led by <a target="_blank" title="UTAS home page" href="http://www.utas.edu.au/">University of Tasmania</a> in partnership
+                        with the Australian marine & climate science community.
+                        </p>
 
-                            <p>${portalBranding.footerContent}</p>
+                        <p>${portalBranding.footerContent}</p>
 
-                            <div class="buildInfo"><buildInfo:summary /></div>
-                        </div>
+                        <div class="buildInfo"><buildInfo:summary /></div>
                     </div>
                 </div>
             </div>

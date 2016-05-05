@@ -9,7 +9,7 @@
     </div>
     <g:if test="${portalBranding.secondaryLogoImage}">
     <div id="secondaryLogoContainer">
-        <img src="${portalBranding.secondaryLogoImage}" alt="secondary logo" width="110" />
+        <img src="${portalBranding.secondaryLogoImage}" alt="secondary logo" width="120" />
     </div>
     </g:if>
 

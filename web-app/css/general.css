@@ -130,7 +130,7 @@ hr {
 }
 
 .headerHeightOverlord {
-    height: 120px;
+    height: 130px;
 }
 
 #logoContainer,
@@ -988,7 +988,6 @@ div.allwhite {
     background-color: #EBEBEB;
 }
 
-
 .resultsRowHeaderTitle:hover,
 .dataCollectionDetailsAccordion .x-panel-header:hover,
 .filter-selection-panel .x-panel-header:hover,
@@ -1135,7 +1134,7 @@ div:not(.x-tree-selected) * {
     padding: 4px 8px 6px;
     position: absolute;
     right: 25px;
-    top: 45px;
+    top: 145px;
 }
 
 #downLoadCartWidget span {

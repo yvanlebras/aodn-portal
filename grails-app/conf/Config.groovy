@@ -56,8 +56,7 @@ grails.exceptionresolver.params.exclude = ['password']
 
 // Portal help site
 help {
-    url = "http://help.aodn.org.au"
-    downloadDatasetUrl = "${help.url}/?q=node/6"
+    url = "https://aodnsite.wordpress.com/"
 }
 
 oceanCurrent.url = "http://oceancurrent.aodn.org.au"
@@ -252,8 +251,8 @@ portal {
     footerContent =
         """
         <a title="Email us for help in using this site" target="_blank" class="external" href="mailto:info@emii.org.au?subject=Portal enquiry - ">Contact</a> <b>|</b>
-        <a title="Data usage acknowledgement" target="_blank" class="external" href="${help.url}/help/?q=node/81">Acknowledgement</a> <b>|</b>
-        <a title="Disclaimer information" target="_blank" class="external" href="${help.url}/help/?q=node/80">Disclaimer</a> <b>|</b>
+        <a title="Data usage acknowledgement" target="_blank" class="external" href="${help.url}/81-2/">Acknowledgement</a> <b>|</b>
+        <a title="Disclaimer information" target="_blank" class="external" href="${help.url}/80-2/">Disclaimer</a> <b>|</b>
         <a title="Integrated Marine Observing System" target="_blank" class="external" href="http://www.imos.org.au">IMOS</a> <b>|</b>
         <a title="Australian Ocean Data Network" target="_blank" class="external" href="http://imos.org.au/aodn.html">AODN</a><b>|</b>
         <a title="AODN Portal User Guide" target="_blank" class="external" href="https://aodnsite.wordpress.com/">Contributing</a>

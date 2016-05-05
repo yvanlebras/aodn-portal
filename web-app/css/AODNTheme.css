@@ -18,8 +18,12 @@ h2 {
 #logoContainer {
     margin-top: 7px;
     padding-left: 35px;
-    position:relative;
-    overflow:hidden;
+    position: relative;
+    overflow: hidden;
+}
+
+#secondaryLogoContainer {
+    right: 40px;
 }
 
 .buildInfo {
@@ -37,10 +41,10 @@ h1, h2, h3, h4,
 
 #header {
     background-image: linear-gradient(0deg, transparent 24%,
-        rgba(255, 255, 255, 0.1) 25%,
-        rgba(255, 255, 255, 0.1) 26%, transparent 27%, transparent 74%,
-        rgba(255, 255, 255, 0.1) 75%,
-        rgba(255, 255, 255, 0.1) 76%, transparent 77%, transparent),
+    rgba(255, 255, 255, 0.1) 25%,
+    rgba(255, 255, 255, 0.1) 26%, transparent 27%, transparent 74%,
+    rgba(255, 255, 255, 0.1) 75%,
+    rgba(255, 255, 255, 0.1) 76%, transparent 77%, transparent),
     linear-gradient(90deg, transparent 24%,
         rgba(255, 255, 255, 0.1) 25%,
         rgba(255, 255, 255, 0.1) 26%, transparent 27%, transparent 74%,
@@ -49,8 +53,8 @@ h1, h2, h3, h4,
     linear-gradient(to right, #0a283a 0%, #0d405f 23%, rgb(0, 92, 146) 75%, rgb(0, 72, 114) 100%);
     background-repeat: repeat, repeat, repeat;
     background-size: 10px 10px, 10px 6px, 100% 100px;
-    position:relative;
-    overflow:hidden;
+    position: relative;
+    overflow: hidden;
     min-width: 710px;
 }
 
@@ -67,22 +71,18 @@ h1, h2, h3, h4,
     width: 100%;
 }
 
-
 #headerTitle {
     font-family: "Oswald", sans-serif;
     font-weight: 700;
     color: White;
-    font-size: 34px;
+    font-size: 37px;
     margin: 0;
-    padding-top: 38px;
+    padding-top: 37px;
     padding-left: 10px;
-    text-shadow: 1px 1px 2px rgba(33, 37, 40, 0.62);
     line-height: 48px ! important;
 }
 
-
 @media (max-width: 800px) {
-
 
     #headerContainer #headerTitle {
         font-size: 28px;
@@ -111,15 +111,6 @@ h1, h2, h3, h4,
 
 #toplinks a:not(:first-child) {
     border-left: 1px solid #9DAAB1;
-}
-
-.viewPortTab * {
-    color: #BF915D;
-}
-
-#viewPortLinks {
-    border: none;
-    background: #70accc;
 }
 
 p {
@@ -187,6 +178,7 @@ ul.x-tab-strip-top {
     height: 30px;
     clear: both;
 }
+
 .clear {
     height: 10px;
 }
@@ -204,56 +196,85 @@ ul.x-tab-strip-top {
     color: black;
     border-radius: 0 0 8px 8px;
     right: 100px;
-    top: 155px;
+    top: 160px;
     box-shadow: 1px 1px 6px #999;
 }
 
 .x-btn.navigationButton {
-    background-color: #FFBA66;
+    background: #F9A840; /* strong orange */
 }
 
 .x-btn.navigationButtonActive {
     background-color: #89C8EE;
 }
 
+
+.viewPortTab * {
+    color: #CFD4D7;
+}
+
+/* action links */
+.viewPortTabActive *,
+.viewPortTabActiveLast *,
 .x-btn.navigationButton * {
-    color: #2C2A25;
+    color: #3A3F41;
     font-weight: bold;
 }
 
-.x-btn.navigationButton.x-btn-over:not(.x-btn-selected) {
-    background: #F9A840;
+.viewPortTabActive:hover *,
+.x-btn.navigationButton.x-btn-over:not(.x-btn-selected) * {
+    color: black;
 }
 
-.x-btn.navigationButton.x-btn-over:not(.x-btn-selected) * {
-    color: white;
+.x-btn.navigationButton.x-btn-over:not(.x-btn-selected) {
+    background-color: #FFBA66; /* AODN logo mandarin color */
 }
+
+
 
 .x-btn-selected {
-    background: #BBB8B5 ! important;
+    background: #B5B6BB ! important;
 }
 
 #viewPortLinks {
-    box-shadow: 1px 1px 8px #666;
+    border: none;
+    background: #306a93;
+    box-shadow: 2px 2px 5px rgba(50, 50, 50, 0.35);
+}
+
+.viewPortTab button {
+    background-color: transparent;
 }
 
 .viewPortTab {
-    background: url(../images/viewPortTabUnselected.png) right 0 center no-repeat;
+    background: #637580;
+    /*box-shadow: inset 51px -11px 34px -33px rgba(16, 64,94, 0.4);*/
+    position: relative;
 }
 
-.viewPortTabActive *,
-.viewPortTabActiveLast * {
-    color: #212121 ! important;
+.viewPortTab::after {
+    background: #637580;
+    position: absolute;
+    width: 20px;
+    height: 100%;
+    content: " ";
+    border-right: 3px solid #435B6A;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    right: -15px;
+    z-index: 1000;
 }
 
-.viewPortTabActive {
-    background-color: #FFBA66; /* IE8 */
-    background: url(../images/AODN/viewPortTabActive.png) right 0 center no-repeat #FFBA66;
-    border: none;
+.viewPortTabActive,
+.viewPortTab.viewPortTabActive::after {
+    background-color: #F9A840;
+    border-right-color: #987E43;
 }
 
-.viewPortTabActiveLast {
-    background: url(../images/AODN/viewPortTabActiveLast.png) right 0 center no-repeat;
+.viewPortTabActive:hover,
+.viewPortTab.viewPortTabActive:hover::after {
+    background-color: #FFBA66;
+    /*color: white;*/
 }
 
 .steps .stepTitle {
@@ -308,4 +329,26 @@ dt {
 
 .x-window-plain .x-window-body {
     background-color: #fefefe !important;
+}
+
+.x-tab-strip-top .x-tab-right,
+.x-tab-strip-top .x-tab-left,
+.x-tab-strip-top .x-tab-strip-inner,
+.resultsRowHeaderTitle,
+.dataCollectionDetailsAccordion .x-panel-header,
+.filter-selection-panel .x-panel-header,
+.dataCollectionDetailsPanel:not(.x-panel-collapsed) .x-panel-header {
+    background-color: #E5E7E8;
+}
+
+.resultsRowHeaderTitle:hover,
+.dataCollectionDetailsAccordion .x-panel-header:hover,
+.filter-selection-panel .x-panel-header:hover,
+.x-btn-over:not(.navigationButton),
+.x-btn-over:not(.navigationButton) *,
+ul.x-tab-strip-top li:hover * {
+    background-color: #D3D8DA;
+}
+
+.footerText {
 }
