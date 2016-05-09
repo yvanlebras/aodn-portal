@@ -107,7 +107,7 @@
                 <div class="panel-body lead">
                     <a href="http://oceancurrent.imos.org.au/" class="btn btn-secondary btn-lg">IMOS OceanCurrent</a>
                     <p></p>
-                    <p><strong>The latest information round Australia</strong></p>
+                    <p><strong>The latest information around Australia</strong></p>
                 </div>
             </div>
 
