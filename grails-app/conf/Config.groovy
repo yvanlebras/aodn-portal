@@ -146,7 +146,7 @@ environments {
         portal {
             siteHeader = "Open Access to Ocean Data"
             logo = "images/AODN/AODN_logo_fullText.png"
-            secondaryLogo = "https://static.emii.org.au/images/logo/IMOS_logo-stacked3.png"
+            secondaryLogo = "https://static.emii.org.au/images/logo/IMOS_logo-stacked-reversed-Converted.png"
             icon = "https://static.emii.org.au/images/aodn/favicon.ico"
         }
     }
@@ -251,11 +251,11 @@ portal {
     footerContent =
         """
         <a title="Email us for help in using this site" target="_blank" class="external" href="mailto:info@emii.org.au?subject=Portal enquiry - ">Contact</a> <b>|</b>
-        <a title="Data usage acknowledgement" target="_blank" class="external" href="${help.url}/81-2/">Acknowledgement</a> <b>|</b>
-        <a title="Disclaimer information" target="_blank" class="external" href="${help.url}/80-2/">Disclaimer</a> <b>|</b>
+        <a title="Data usage acknowledgement" target="_blank" class="external" href="${help.url}user-guide-introduction/aodn-portal/data-use-acknowledgement">Acknowledgement</a> <b>|</b>
+        <a title="Disclaimer information" target="_blank" class="external" href="${help.url}user-guide-introduction/aodn-portal/disclaimer">Disclaimer</a> <b>|</b>
+        <a title="Australian Ocean Data Network" target="_blank" class="external" href="http://imos.org.au/aodn.html">AODN</a> <b>|</b>
         <a title="Integrated Marine Observing System" target="_blank" class="external" href="http://www.imos.org.au">IMOS</a> <b>|</b>
-        <a title="Australian Ocean Data Network" target="_blank" class="external" href="http://imos.org.au/aodn.html">AODN</a><b>|</b>
-        <a title="AODN Portal User Guide" target="_blank" class="external" href="https://aodnsite.wordpress.com/">Contributing</a>
+        <a title="AODN Portal User Guide" target="_blank" class="external" href="${help.url}contributing-data">Contributing</a>
         """
 
     initialBbox = "110,-50,160,-3"
