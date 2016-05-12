@@ -143,12 +143,11 @@ a:focus {
 
 @media (max-width: 800px) {
 
-    #home .homeContent h1 {
-        font-size: 4em;
-    }
-
     #home .homeContent p {
         font-size: 1.2em;
+    }
+    #home .homeContent h1 {
+        font-size: 5.5em;
     }
 }
 
@@ -159,6 +158,7 @@ a:focus {
         top: 120px;
         left: 0;
     }
+
     #headerContainer #headerTitle{
         padding-top: 0;
         padding-left: 42px;
