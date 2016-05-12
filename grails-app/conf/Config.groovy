@@ -56,7 +56,7 @@ grails.exceptionresolver.params.exclude = ['password']
 
 // Portal help site
 help {
-    url = "https://aodnsite.wordpress.com/"
+    url = "https://help.aodn.org.au/"
 }
 
 oceanCurrent.url = "http://oceancurrent.aodn.org.au"
@@ -159,9 +159,15 @@ environments {
 
     production {
 
-        // URLs
+        // overwritten by Chef in production
         grails.serverURL = "http://myaodn.example.com"
         geonetwork.url = "http://catalogue-123.aodn.org.au/geonetwork"
+        portal {
+            siteHeader = "Open Access to Ocean Data"
+            logo = "images/AODN/AODN_logo_fullText.png"
+            secondaryLogo = "https://static.emii.org.au/images/logo/IMOS_logo-stacked-reversed-Converted.png"
+            icon = "https://static.emii.org.au/images/aodn/favicon.ico"
+        }
     }
 }
 

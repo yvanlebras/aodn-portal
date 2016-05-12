@@ -57,20 +57,23 @@
         <div class="row">
             <div class="col-md-4 text-center">
                 <div class="panel-body lead">
-                    <img src="https://static.emii.org.au/images/logo/NCRIS_Initiative_stacked200.png" alt="NCRIS logo" />
-                    <a href="http://www.utas.edu.au/" title="UTAS home page" target="_blank"><img src="https://static.emii.org.au/images/logo/utas/UTAS_MONO_190w.png" alt="UTAS logo" />
-                    </a>
-                    <br />
-                    <a class="noUnderline" href="http://twitter.com/AusOceanDataNet" target="_blank">
-                        <img src="${resource(
-                            dir: 'images', file: 'Twitter_logo_black.png'
-                        )}" title="Follow us on twitter" alt="Follow us on twitter" />
-                    </a>
-                    <a class="noUnderline" href="http://www.facebook.com/AusOceanDataNet" target="_blank">
-                        <img src="${resource(
-                            dir: 'images', file: 'FB-logo-gray.png'
-                        )}" title="Find us on Facebook" alt="Find us on Facebook" />
-                    </a>
+                    <div>
+                        <img src="https://static.emii.org.au/images/logo/NCRIS_Initiative_stacked200.png" alt="NCRIS logo" />
+                        <a href="http://www.utas.edu.au/" title="UTAS home page" target="_blank"><img src="https://static.emii.org.au/images/logo/utas/UTAS_MONO_190w.png" alt="UTAS logo" />
+                        </a>
+                    </div>
+                    <div class="socialLinks">
+                        <a class="noUnderline" href="http://twitter.com/AusOceanDataNet" target="_blank">
+                            <img src="${resource(
+                                dir: 'images', file: 'Twitter_logo_black.png'
+                            )}" title="Follow us on twitter" alt="Follow us on twitter" />
+                        </a>
+                        <a class="noUnderline" href="http://www.facebook.com/AusOceanDataNet" target="_blank">
+                            <img src="${resource(
+                                dir: 'images', file: 'FB-logo-gray.png'
+                            )}" title="Find us on Facebook" alt="Find us on Facebook" />
+                        </a>
+                    </div>
                 </div>
             </div>
 

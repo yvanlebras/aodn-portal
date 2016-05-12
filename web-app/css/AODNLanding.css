@@ -100,8 +100,8 @@ img {
 }
 
 #home .homeContent p {
-    font-family: inherit;
-    font-size: 2em;
+    font-family: "Oswald",sans-serif;
+    font-size: 1.8em;
     margin: 10px 0 20px 0;
     text-shadow: 1px 1px 16px rgba(6,73,108, 0.62);
 }
@@ -110,7 +110,7 @@ img {
     font-family: impact, sans-serif;
     text-shadow: 1px 1px 16px rgba(6,73,108, 0.62);
     font-weight: 700;
-    font-size: 6em;
+    font-size: 8.5em;
     margin: 0;
     padding: 0;
 }
@@ -135,6 +135,9 @@ a:focus {
 @media (min-width: 1000px) {
     .container{
         max-width: 800px;
+    }
+    .socialLinks {
+        text-align: left;
     }
 }
 
@@ -181,3 +184,7 @@ a:focus {
     border-left: 1px solid #9daab1;
 }
 
+.socialLinks {
+    margin-top: 15px;
+    margin-left: 5px;
+}
