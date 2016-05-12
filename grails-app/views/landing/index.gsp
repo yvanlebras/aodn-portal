@@ -70,7 +70,7 @@
 
     <div class="text-vcenter">
         <div class="homeContent">
-            <h1>AODN Ocean Portal</h1>
+            <h1>AODN Portal</h1>
 
             <p>"The gateway to Australian marine and climate science data"</p>
 
@@ -107,7 +107,7 @@
                 <div class="panel-body lead">
                     <a href="http://oceancurrent.imos.org.au/" class="btn btn-secondary btn-lg">IMOS OceanCurrent</a>
                     <p></p>
-                    <p><strong>The latest information around Australia</strong></p>
+                    <p><strong>The latest ocean information around Australia</strong></p>
                 </div>
             </div>
 
@@ -115,7 +115,7 @@
                 <div class="footerText">
                     <div class="panel-body lead">
                         <p>
-                            The <a target="_blank" class="external" title="AODN Ocean Data Portal" href="http://portal.aodn.org.au/aodn">AODN Ocean Data Portal</a> has access to all available marine and climate science data and provides the primary access to IMOS data including access to the complete IMOS metadata catalog.
+                            The <a target="_blank" class="external" title="AODN Portal" href="http://portal.aodn.org.au/aodn">AODN Portal</a> provides access to all available Australian marine and climate science data and provides the primary access to IMOS data including access to the IMOS metadata.
                         </p>
 
                         <p>
