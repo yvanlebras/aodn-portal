@@ -26,34 +26,6 @@
                     element.css({backgroundPosition: '50% ' + yPos + 'px'});
                 });
             });
-
-            /*
-             // fade when away from element
-             $('section[data-uitype="fade"]').each(function() {
-             var element = $(this);
-             $(window).scroll(function() {
-             var pixelBuffer = 350;
-             var scrollVar = $(window).scrollTop();
-             var elementOffset = element.offset().top;
-             var distance = Math.abs(scrollVar - elementOffset);
-
-             var opacity = 0;
-             if (distance < pixelBuffer ) {
-             opacity = Math.abs(1 - distance / (pixelBuffer + (pixelBuffer/10)));
-             }
-             element.children().css({'opacity': opacity});
-             });
-             });
-             */
-
-            // slowly move to named anchor links
-            var $root = $('html, body');
-            $('a').click(function() {
-                $root.animate({
-                    scrollTop: $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top
-                }, 500);
-                return false;
-            });
         });
 
     </script>
@@ -80,7 +52,6 @@
 
 </section>
 
-<a name="information"></a>
 <section id="information" data-uitype="fade">
     <div class="container">
         <div class="row">
