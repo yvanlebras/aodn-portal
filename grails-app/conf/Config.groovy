@@ -141,14 +141,6 @@ environments {
         // Set to true if you want to test interaction with new servers. This turns
         // your portal instance into an open proxy and can be dangerous.
         allowAnyHost = true
-
-
-        portal {
-            siteHeader = "Open Access to Ocean Data"
-            logo = "images/AODN/AODN_logo_fullText.png"
-            secondaryLogo = "https://static.emii.org.au/images/logo/IMOS_logo-stacked-reversed-Converted.png"
-            icon = "https://static.emii.org.au/images/aodn/favicon.ico"
-        }
     }
 
     test {
@@ -162,12 +154,6 @@ environments {
         // overwritten by Chef in production
         grails.serverURL = "http://myaodn.example.com"
         geonetwork.url = "http://catalogue-123.aodn.org.au/geonetwork"
-        portal {
-            siteHeader = "Open Access to Ocean Data"
-            logo = "images/AODN/AODN_logo_fullText.png"
-            secondaryLogo = "https://static.emii.org.au/images/logo/IMOS_logo-stacked-reversed-Converted.png"
-            icon = "https://static.emii.org.au/images/aodn/favicon.ico"
-        }
     }
 }
 
@@ -240,10 +226,26 @@ baselayers = [
 ]
 
 portal {
-    siteHeader = "[not configured]"
+    siteHeader = "Open Access to Ocean Data"
     motdUrl = "https://static.emii.org.au/motd"
+    logo = "https://static.emii.org.au/images/logo/AODN_logo_fullText.png"
+    secondaryLogo = "https://static.emii.org.au/images/logo/IMOS_logo-stacked-reversed-Converted.png"
+    icon = "https://static.emii.org.au/images/aodn/favicon.ico"
 
-    logo = "images/favicon.ico"
+    imos = "https://imos.aodn.org.au"
+    imos_home = "https://imos.aodn.org.au/imos123/home"
+    imos_logo = "https://static.emii.org.au/images/logo/IMOS-Ocean-Portal-logo.png"
+    aodn_email = "info@aodn.org.au"
+    imos_condition_of_use = "http://imos.org.au/imostermsofuse0.html"
+    ncris_logo = "https://static.emii.org.au/images/logo/NCRIS_Initiative_stacked200.png"
+    utas = "http://www.utas.edu.au/"
+    utas_logo = "https://static.emii.org.au/images/logo/utas/UTAS_MONO_190w.png"
+    twitter = "http://twitter.com/AusOceanDataNet"
+    facebook = "http://www.facebook.com/AusOceanDataNet"
+    oceancurrent = "http://oceancurrent.imos.org.au/"
+    aodn_portal = "http://portal.aodn.org.au/aodn"
+
+    /*logo = "images/favicon.ico"*/
     header {
         externalLinks = [
             [
@@ -256,11 +258,11 @@ portal {
 
     footerContent =
         """
-        <a title="Email us for help in using this site" target="_blank" class="external" href="mailto:info@aodn.org.au?subject=Portal enquiry - ">Contact</a> <b>|</b>
+        <a title="Email us for help in using this site" target="_blank" class="external" href="mailto:${portal.aodn_email}?subject=Portal enquiry - ">Contact</a> <b>|</b>
         <a title="Data usage acknowledgement" target="_blank" class="external" href="${help.url}user-guide-introduction/aodn-portal/data-use-acknowledgement">Acknowledgement</a> <b>|</b>
         <a title="Disclaimer information" target="_blank" class="external" href="${help.url}user-guide-introduction/aodn-portal/disclaimer">Disclaimer</a> <b>|</b>
-        <a title="Australian Ocean Data Network" target="_blank" class="external" href="http://imos.org.au/aodn.html">AODN</a> <b>|</b>
-        <a title="Integrated Marine Observing System" target="_blank" class="external" href="http://www.imos.org.au">IMOS</a> <b>|</b>
+        <a title="Australian Ocean Data Network" target="_blank" class="external" href="${portal.imos}/aodn.html">AODN</a> <b>|</b>
+        <a title="Integrated Marine Observing System" target="_blank" class="external" href="${portal.imos}">IMOS</a> <b>|</b>
         <a title="AODN Portal User Guide" target="_blank" class="external" href="${help.url}contributing-data">Contributing</a>
         """
 

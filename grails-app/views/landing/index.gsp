@@ -58,17 +58,17 @@
             <div class="col-md-4 text-center">
                 <div class="panel-body lead">
                     <div>
-                        <img src="https://static.emii.org.au/images/logo/NCRIS_Initiative_stacked200.png" alt="NCRIS logo" />
-                        <a href="http://www.utas.edu.au/" title="UTAS home page" target="_blank"><img src="https://static.emii.org.au/images/logo/utas/UTAS_MONO_190w.png" alt="UTAS logo" />
+                        <img src="${grailsApplication.config.portal.ncris_logo}" alt="NCRIS logo" />
+                        <a href="${grailsApplication.config.portal.utas}" title="UTAS home page" target="_blank"><img src="${grailsApplication.config.portal.utas_logo}" alt="UTAS logo" />
                         </a>
                     </div>
                     <div class="socialLinks">
-                        <a class="noUnderline" href="http://twitter.com/AusOceanDataNet" target="_blank">
+                        <a class="noUnderline" href="${grailsApplication.config.portal.twitter}" target="_blank">
                             <img src="${resource(
                                 dir: 'images', file: 'Twitter_logo_black.png'
                             )}" title="Follow us on twitter" alt="Follow us on twitter" />
                         </a>
-                        <a class="noUnderline" href="http://www.facebook.com/AusOceanDataNet" target="_blank">
+                        <a class="noUnderline" href="${grailsApplication.config.portal.facebook}" target="_blank">
                             <img src="${resource(
                                 dir: 'images', file: 'FB-logo-gray.png'
                             )}" title="Find us on Facebook" alt="Find us on Facebook" />
@@ -79,7 +79,7 @@
 
             <div class="col-md-4 text-center">
                 <div class="panel-body lead">
-                    <a href="http://oceancurrent.imos.org.au/" class="btn btn-secondary btn-lg">IMOS OceanCurrent</a>
+                    <a href="${grailsApplication.config.portal.oceancurrent}" class="btn btn-secondary btn-lg">IMOS OceanCurrent</a>
                     <p></p>
                     <p><strong>The latest ocean information around Australia</strong></p>
                 </div>
@@ -89,12 +89,12 @@
                 <div class="footerText">
                     <div class="panel-body lead">
                         <p>
-                            The <a target="_blank" class="external" title="AODN Portal" href="http://portal.aodn.org.au/aodn">AODN Portal</a> provides access to all available Australian marine and climate science data and provides the primary access to IMOS data including access to the IMOS metadata.
+                            The <a target="_blank" class="external" title="AODN Portal" href="${grailsApplication.config.portal.aodn_portal}">AODN Portal</a> provides access to all available Australian marine and climate science data and provides the primary access to IMOS data including access to the IMOS metadata.
                         </p>
 
                         <p>
                             IMOS is a national collaborative research infrastructure, supported by
-                            Australian Government. It is led by <a target="_blank" title="UTAS home page" href="http://www.utas.edu.au/">University of Tasmania</a> in partnership
+                            Australian Government. It is led by <a target="_blank" title="UTAS home page" href="${grailsApplication.config.portal.utas}">University of Tasmania</a> in partnership
                         with the Australian marine & climate science community.
                         </p>
 

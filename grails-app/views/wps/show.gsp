@@ -8,8 +8,8 @@
     <body>
         <div class="portalheader">
             <div class="container">
-                <a class="btn" role="button" href="https://imos.aodn.org.au/imos123/home">
-                    <img src="https://static.emii.org.au/images/logo/IMOS-Ocean-Portal-logo.png" alt="IMOS logo">
+                <a class="btn" role="button" href="${grailsApplication.config.portal.imos_home}">
+                    <img src="${grailsApplication.config.portal.imos_logo}" alt="IMOS logo">
                 </a>
             </div>
         </div>
@@ -40,10 +40,10 @@
                            please let us
                            know.
                            All feedback is very welcome. For help and information about this site
-                           please contact <a href="mailto:info@aodn.org.au">info@aodn.org.au</a></p>
+                           please contact <a href="mailto:${grailsApplication.config.portal.aodn_email}">${grailsApplication.config.portal.aodn_email}</a></p>
                     </div>
                     <div class="col-md-8">
-                        <p>Use of this web site and information available from it is subject to our <a href="http://imos.org.au/imostermsofuse0.html">
+                        <p>Use of this web site and information available from it is subject to our <a href="${grailsApplication.config.portal.imos_condition_of_use}">
                            Conditions of use
                         </a></p>
                         <p>© 2016 IMOS</p>
