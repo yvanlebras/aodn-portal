@@ -935,6 +935,11 @@ div.allwhite {
     float: left;
 }
 
+.resultsIconContainer {
+    margin-top: 16px;
+    text-align: center;
+}
+
 .geoSelectionPanelButtons {
     position: relative;
     top: -35px;
@@ -1251,9 +1256,4 @@ span.menu-title {
 .infoPanel h3,
 .infoPanel h4 {
     margin: 10px 0 5px 0;
-}
-
-.resultsIconContainer {
-    margin-top: 6px;
-    width: 100px;
 }
