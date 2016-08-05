@@ -19,7 +19,7 @@
         <parameter name="mobile" value="false"/>
         <classes>
             <class name="au.org.emii.portal.tests.ImosLinkCheckTest"/>
-            <class name="au.org.emii.portal.tests.ImosLinkCheckTest"/>
+            <class name="au.org.emii.portal.tests.ImosLogoCheckTest"/>
         </classes>
     </test>
     <test name="Firefox 45.0 on Windows 10">
