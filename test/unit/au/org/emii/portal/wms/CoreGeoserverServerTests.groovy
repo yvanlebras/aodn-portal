@@ -6,7 +6,6 @@ class CoreGeoserverServerTests extends GrailsUnitTestCase {
 
     def coreGeoserverServer
     def validGeoserverResponse
-    def validDescribeLayerResponse
 
     protected void setUp() {
         super.setUp()
@@ -32,22 +31,11 @@ class CoreGeoserverServerTests extends GrailsUnitTestCase {
   </xsd:complexType>
   <xsd:element name="layer" substitutionGroup="gml:_Feature" type="imos:layerType"/>
 </xsd:schema>"""
-
-        validDescribeLayerResponse =
-'''<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE WMS_DescribeLayerResponse SYSTEM "https://geoserver.aodn.org.au/geoserver/schemas/wms/1.1.1/WMS_DescribeLayerResponse.dtd">
-<WMS_DescribeLayerResponse version="1.1.1">
-  <LayerDescription name="imos:argo_profile_map" wfs="https://geoserver.aodn.org.au/geoserver/wfs?" owsURL="https://geoserver.aodn.org.au/geoserver/wfs?" owsType="WFS">
-    <Query typeName="imos:argo_profile_map"/>
-  </LayerDescription>
-</WMS_DescribeLayerResponse>
-'''
     }
 
     void testValidFilters() {
-
-        coreGeoserverServer.metaClass._describeFeatureType = { server, layer -> return validGeoserverResponse }
-        coreGeoserverServer.metaClass.getLayerInfo = {server, layer -> return [
+        CoreGeoserverUtils.metaClass._describeFeatureType = { server, layer -> return validGeoserverResponse }
+        CoreGeoserverUtils.metaClass.getLayerInfo = {server, layer -> return [
                 owsUrl: "http://server.url",
                 owsType: "owsTypo",
                 wfsUrl: "http://wfs.server.url",
@@ -82,8 +70,8 @@ class CoreGeoserverServerTests extends GrailsUnitTestCase {
     }
 
     void testInvalidFilters() {
-        coreGeoserverServer.metaClass._describeFeatureType = { server, layer -> return "here be invalid xml" }
-        coreGeoserverServer.metaClass.getLayerInfo = {server, layer -> return [
+        CoreGeoserverUtils.metaClass._describeFeatureType = { server, layer -> return "here be invalid xml" }
+        CoreGeoserverUtils.metaClass.getLayerInfo = {server, layer -> return [
                 owsType: "owsTypo",
                 wfsUrl: "http://wfs.server.url",
                 typeName: "thetypename"
@@ -94,21 +82,5 @@ class CoreGeoserverServerTests extends GrailsUnitTestCase {
         def filtersJson = coreGeoserverServer.getFilters("http://server", "layer")
 
         assertEquals expected, filtersJson
-    }
-
-    void testLookup() {
-        def describeLayerCalledCount = 0
-
-        coreGeoserverServer.metaClass._describeLayer = { server, layer -> describeLayerCalledCount++ ; return validDescribeLayerResponse }
-
-        def result = coreGeoserverServer.getLayerInfo("https://geoserver.aodn.org.au/geoserver/wms", "imos:argo_profile_map")
-        def expected = ["owsType": "WFS", "wfsUrl": "https://geoserver.aodn.org.au/geoserver/wfs?", "typeName": "imos:argo_profile_map"]
-
-        assertEquals(1, describeLayerCalledCount) // describeLayer called
-        assertEquals(expected, result)
-
-        result = coreGeoserverServer.getLayerInfo("https://geoserver.aodn.org.au/geoserver/wms", "imos:argo_profile_map")
-        assertEquals(1, describeLayerCalledCount) // describeLayer not called - cache used
-        assertEquals(expected, result)
     }
 }
