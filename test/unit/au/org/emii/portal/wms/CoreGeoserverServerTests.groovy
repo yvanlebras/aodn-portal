@@ -34,8 +34,8 @@ class CoreGeoserverServerTests extends GrailsUnitTestCase {
     }
 
     void testValidFilters() {
-        CoreGeoserverUtils.metaClass._describeFeatureType = { server, layer -> return validGeoserverResponse }
-        CoreGeoserverUtils.metaClass.getLayerInfo = {server, layer -> return [
+        coreGeoserverServer.metaClass._describeFeatureType = { server, layer -> return validGeoserverResponse }
+        coreGeoserverServer.metaClass.getLayerInfo = {server, layer -> return [
                 owsUrl: "http://server.url",
                 owsType: "owsTypo",
                 wfsUrl: "http://wfs.server.url",
@@ -70,8 +70,8 @@ class CoreGeoserverServerTests extends GrailsUnitTestCase {
     }
 
     void testInvalidFilters() {
-        CoreGeoserverUtils.metaClass._describeFeatureType = { server, layer -> return "here be invalid xml" }
-        CoreGeoserverUtils.metaClass.getLayerInfo = {server, layer -> return [
+        coreGeoserverServer.metaClass._describeFeatureType = { server, layer -> return "here be invalid xml" }
+        coreGeoserverServer.metaClass.getLayerInfo = {server, layer -> return [
                 owsType: "owsTypo",
                 wfsUrl: "http://wfs.server.url",
                 typeName: "thetypename"
@@ -82,5 +82,20 @@ class CoreGeoserverServerTests extends GrailsUnitTestCase {
         def filtersJson = coreGeoserverServer.getFilters("http://server", "layer")
 
         assertEquals expected, filtersJson
+    }
+
+    void testLookup() {
+        def describeLayerCalledCount = 0
+
+        coreGeoserverServer.metaClass._describeLayer = { server, layer -> describeLayerCalledCount++ ; return validDescribeLayerResponse }
+
+        def result = coreGeoserverServer._lookupWfs("https://geoserver.aodn.org.au/geoserver/wms", "imos:argo_profile_map")
+
+        assertEquals(1, describeLayerCalledCount) // describeLayer called
+        assertEquals(["https://geoserver.aodn.org.au/geoserver/wfs?", "imos:argo_profile_map"], result)
+
+        result = coreGeoserverServer._lookupWfs("https://geoserver.aodn.org.au/geoserver/wms", "imos:argo_profile_map")
+        assertEquals(1, describeLayerCalledCount) // describeLayer not called - cache used
+        assertEquals(["https://geoserver.aodn.org.au/geoserver/wfs?", "imos:argo_profile_map"], result)
     }
 }
