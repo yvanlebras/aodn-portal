@@ -383,6 +383,11 @@
 
     <repositories>
         <repository>
+            <id>maven2</id>
+            <name>maven2</name>
+            <url>http://central.maven.org/maven2/</url>
+        </repository>
+        <repository>
             <id>grails-plugins</id>
             <name>grails-plugins</name>
             <url>https://repo.grails.org/grails/plugins</url>
