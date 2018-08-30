@@ -7,4 +7,4 @@ jdk:
 
 env:
     global
-    - TZ="Australia/Hobart" JAVA_OPTS="-Xmx1G -Xms512m -XX:PermSize=64m -XX:MaxPermSize=512m"
+    - TZ="Australia/Hobart" MAVEN_OPTS="-Xmx1G -Xms512m -XX:PermSize=64m -XX:MaxPermSize=512m  -Dhttp.protocols=TLSv1.2"
