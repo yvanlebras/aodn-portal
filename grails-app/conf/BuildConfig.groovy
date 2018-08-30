@@ -25,8 +25,7 @@ grails.project.dependency.resolution = {
 
         mavenLocal()
         mavenCentral()
-        maven { url "http://repo.grails.org/grails/core" }
-        mavenRepo "https://repo.grails.org/grails/plugins"
+        mavenRepo "http://repo.grails.org/grails/plugins"
     }
     dependencies {
         compile('org.codehaus.groovy.modules.http-builder:http-builder:0.7') {

@@ -383,11 +383,6 @@
 
     <repositories>
         <repository>
-            <id>grails</id>
-            <name>grails</name>
-            <url>https://repo.grails.org/grails/core</url>
-        </repository>
-        <repository>
             <id>grails-plugins</id>
             <name>grails-plugins</name>
             <url>https://repo.grails.org/grails/plugins</url>
