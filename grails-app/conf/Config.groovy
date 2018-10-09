@@ -142,7 +142,7 @@ environments {
         def localhostAddress = java.net.InetAddress.getLocalHost().getHostAddress()
         grails.serverURL = "http://${localhostAddress}:9090"
         gogoduck.url = "http://${localhostAddress}:8300/go-go-duck"
-        geonetwork.url = "https://geonetwork-datatrawler-portal-stack.dev.aodn.org.au/geonetwork"
+        geonetwork.url = "http://geonetwork-csiro-integration-stack.dev.aodn.org.au/geonetwork"
     }
 
     test {
@@ -197,12 +197,12 @@ knownServers = [
     ],
 
     [
-        uri: 'https://www.cmar.csiro.au/geoserver/wms',
+        uri: 'http://www.cmar.csiro.au/geoserver/wms',
         wmsVersion: '1.1.1',
         type: 'datatrawlerserver'
     ],
     [
-        uri: 'https://www.cmar.csiro.au/data/trawler/aodn2csiro.cfm',
+        uri: 'https://www.cmar.csiro.au/data/trawler/ctd_extract.cfm',
         wmsVersion: '1.1.1',
         type: 'datatrawlerserver',
         csvDownloadFormat: 'csv-with-metadata-header'
@@ -367,7 +367,7 @@ portal {
     downloadHandlersForProtocol = [
         [ 'handler': 'WfsDownloadHandler',                 'protocol': 'OGC:WFS-1.0.0-http-get-capabilities' ],
         [ 'handler': 'GogoduckDownloadHandler',            'protocol': 'OGC:WPS--gogoduck'                   ],
-        [ 'handler': 'DataTrawlerDownloadHandler',         'protocol': 'AODN:CSIRO--DataTrawler'                     ],
+        [ 'handler': 'DataTrawlerDownloadHandler',         'protocol': 'WWW:DOWNLOAD-1.0-http--csiro-oa-app' ],
         [ 'handler': 'PointCSVDownloadHandler',            'protocol': 'OGC:WPS--gogoduck'                   ],
         [ 'handler': 'NetcdfSubsetServiceDownloadHandler', 'protocol': 'OGC:WPS--netcdf-subset-service'      ],
         [ 'handler': 'PythonDownloadHandler',              'protocol': 'AODN:WFS-EXTERNAL-1.0.0-http-get-capabilities' ],
