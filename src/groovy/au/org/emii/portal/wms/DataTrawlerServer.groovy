@@ -17,50 +17,52 @@ class DataTrawlerServer extends CoreGeoserverServer {
         def filters = []
 
         try {
-            def xml = new XmlSlurper().parseText(_getFiltersXml(server, layer))
+            def xml = new XmlSlurper().parseText(utils._describeFeatureType(server, layer))
 
-            xml.filter.each { filter ->
-                def visualised = Boolean.valueOf(filter.visualised.text())
-                if (visualised) {
-                    def wmsStartDateName = filter.wmsStartDateName.text()
-                    def wmsEndDateName = filter.wmsEndDateName.text()
-                    if (wmsStartDateName != "" && wmsEndDateName != "") {
+            def attributes = xml.'**'.findAll { node ->
+                node.name() == 'element' && node.@name != _removePrefix(layer)
+            }
+
+            boolean hasTemporalRange = false
+
+            attributes.each { attribute ->
+                def propertyName = attribute.@name.text()
+                def propertyType = attribute.@type.text()
+
+                if (['TIME_COVERAGE_START', 'TIME_COVERAGE_END'].contains(propertyName)) {
+                    // HACK: handle CSIRO layers with capitalised property names
+                    if (!hasTemporalRange) {
                         filters.push(
                             [
-                                label           : filter.label.text(),
-                                type            : filter.type.text(),
-                                name            : filter.name.text(),
-                                visualised      : visualised,
-                                wmsStartDateName: wmsStartDateName.toUpperCase(),
-                                wmsEndDateName  : wmsEndDateName.toUpperCase()
+                                label     : 'Time',
+                                type      : 'datetime',
+                                name      : 'TIME',
+                                visualised: true,
+                                wmsStartDateName: 'TIME_COVERAGE_START',
+                                wmsEndDateName: 'TIME_COVERAGE_END'
                             ]
                         )
-                    } else {
-                        filters.push(
-                            [
-                                label           : filter.label.text(),
-                                type            : filter.type.text(),
-                                name            : filter.name.text(),
-                                visualised      : visualised
-                            ]
-                        )
+                        hasTemporalRange = true
                     }
+                } else {
+                    filters.push(
+                        [
+                            label     : _toLabel(propertyName),
+                            type      : _toFilterType(propertyType),
+                            name      : propertyName,
+                            visualised: true
+                        ]
+                    )
                 }
             }
-        }
-        catch (e) {
+        } catch (e) {
             log.error "Unable to parse filters for server '${server}', layer '${layer}'", e
         }
 
         return filters
     }
 
-    def _getFiltersXml(server, layer) {
-        utils._loadUrl(getFiltersUrl(server, layer))
-    }
-
-    static String getFiltersUrl(server, layer) {
-        // Mock endpoint
-        return server + layer
+    def _toLabel(attributeName) {
+        attributeName.replaceAll('_', ' ').toLowerCase().capitalize()
     }
 }
