@@ -103,7 +103,7 @@ Portal.cart.DataTrawlerDownloadHandler = Ext.extend(Portal.cart.AsyncDownloadHan
                 formattedFilters += String.format('LATITUDE={0},{1}&LONGITUDE={2},{3}&',
                     bounds.bottom, bounds.top, bounds.left, bounds.right);
             } else if (filter.hasValue()) {
-                formattedFilters += String.format("{0}={1}&", filter.name, filter.value);
+                formattedFilters += String.format("{0}={1}&", filter.name, encodeURIComponent(filter.value));
             }
         }, this);
 
